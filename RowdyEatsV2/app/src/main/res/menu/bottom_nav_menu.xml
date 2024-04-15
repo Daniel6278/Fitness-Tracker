@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/tracker"
+        android:id="@+id/nav_btn_tracker"
         android:title="Tracker"
         android:icon="@drawable/utsalogo"/>
     <item
-        android:id="@+id/cafe"
+        android:id="@+id/nav_btn_cafe"
         android:title="Cafe"
         android:icon="@drawable/utsalogo"/>
     <item
-        android:id="@+id/home"
+        android:id="@+id/nav_btn_home"
         android:title="Home"
         android:icon="@drawable/utsalogo"/>
     <item
-        android:id="@+id/recipes"
+        android:id="@+id/nav_btn_recipes"
         android:title="Recipes"
         android:icon="@drawable/utsalogo"/>
     <item
-        android:id="@+id/calculator"
+        android:id="@+id/nav_btn_calculator"
         android:title="Calculator"
         android:icon="@drawable/utsalogo"/>
 </menu>

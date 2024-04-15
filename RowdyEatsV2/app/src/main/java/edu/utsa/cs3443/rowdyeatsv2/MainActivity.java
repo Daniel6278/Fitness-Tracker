@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
 
         bottomNavigationView
                 .setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.nav_btn_home);
     }
     CafeFragment cafeFragment = new CafeFragment();
     CalculatorFragment calculatorFragment = new CalculatorFragment();
@@ -44,35 +44,35 @@ public class MainActivity extends AppCompatActivity
     {
 
         switch (item.getItemId()) {
-            case R.id.home:
+            case R.id.nav_btn_home:
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.flFragment, homeFragment)
                         .commit();
                 return true;
 
-            case R.id.tracker:
+            case R.id.nav_btn_tracker:
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.flFragment, trackerFragment)
                         .commit();
                 return true;
 
-            case R.id.cafe:
+            case R.id.nav_btn_cafe:
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.flFragment, cafeFragment)
                         .commit();
                 return true;
 
-            case R.id.recipes:
+            case R.id.nav_btn_recipes:
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.flFragment, recipesFragment)
                         .commit();
                 return true;
 
-            case R.id.calculator:
+            case R.id.nav_btn_calculator:
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.flFragment, calculatorFragment)
