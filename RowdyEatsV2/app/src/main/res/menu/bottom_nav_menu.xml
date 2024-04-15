@@ -3,21 +3,21 @@
     <item
         android:id="@+id/nav_btn_tracker"
         android:title="Tracker"
-        android:icon="@drawable/utsalogo"/>
+        android:icon="@drawable/icon_chart"/>
     <item
         android:id="@+id/nav_btn_cafe"
         android:title="Cafe"
-        android:icon="@drawable/utsalogo"/>
+        android:icon="@drawable/icon_blender"/>
     <item
         android:id="@+id/nav_btn_home"
         android:title="Home"
-        android:icon="@drawable/utsalogo"/>
+        android:icon="@drawable/icon_home"/>
     <item
         android:id="@+id/nav_btn_recipes"
         android:title="Recipes"
-        android:icon="@drawable/utsalogo"/>
+        android:icon="@drawable/icon_recipe"/>
     <item
         android:id="@+id/nav_btn_calculator"
         android:title="Calculator"
-        android:icon="@drawable/utsalogo"/>
+        android:icon="@drawable/icon_calculator"/>
 </menu>

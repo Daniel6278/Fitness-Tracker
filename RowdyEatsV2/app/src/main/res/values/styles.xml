@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- parent="Theme.MaterialComponents.Light.DarkActionBar" -->
         <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryDark">@color/orange_dark</item>
