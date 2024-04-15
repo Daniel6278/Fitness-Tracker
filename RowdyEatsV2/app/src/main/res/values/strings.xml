@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">RowdyEatsV2</string>
+    <string name="app_name">RowdyEats</string>
     <string name="UTSALogo">1</string>
+
+    <string name="recipe_sushi">lorem ipsum sushi</string>
+    <string name="recipe_bkfst_sandwich">lorem ipsum burger</string>
 </resources>
