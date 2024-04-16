@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">RowdyEatsV2</string>
+
+    <string name="preferences_file_key">RowdyEatsPrefs</string>
+    <string name="preferences_name_key">RowdyEatsPrefsName</string>
+
     <string name="UTSALogo">1</string>
 
     <string name="hintFood">What did you Eat?</string>

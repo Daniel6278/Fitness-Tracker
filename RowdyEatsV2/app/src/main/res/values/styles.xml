@@ -2,10 +2,27 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
         <!-- parent="Theme.MaterialComponents.Light.DarkActionBar" -->
+
+        <item name="android:statusBarColor">
+            @android:color/transparent
+        </item>
         <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryDark">@color/orange_dark</item>
-        <item name="colorAccent">@color/blue</item>
+        <item name="colorSecondary">@color/blue</item>
+        <item name="colorAccent">@color/gray_light</item>
+        <item name="colorTertiary">@color/gray_dark</item>
+
+        <item name="android:textColor">@color/black</item>
+
+        <!-- Typography -->
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.RowdyEats.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.RowdyEats.DisplayMedium</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.RowdyEats.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.RowdyEats.BodyLarge</item>
+        <item name="textAppearanceHeadline1">@style/TextAppearance.RowdyEats.H1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.RowdyEats.H2</item>
 
     </style>
 
@@ -13,6 +30,36 @@
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/app_logo_transparent</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
+    </style>
+
+    <!-- Typography -->
+    <style name="TextAppearance.RowdyEats.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:fontWeight">200</item>
+    </style>
+    <style name="TextAppearance.RowdyEats.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontWeight">300</item>
+    </style>
+    <style name="TextAppearance.RowdyEats.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="TextAppearance.RowdyEats.BodyMedium" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="TextAppearance.RowdyEats.H1" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontWeight">500</item>
+    </style>
+    <style name="TextAppearance.RowdyEats.H2" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontWeight">600</item>
     </style>
 
 </resources>
