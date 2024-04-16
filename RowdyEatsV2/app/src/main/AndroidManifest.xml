@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".DetailFoodActivity"/>
+
         <!-- Other activities declarations if any -->
 
     </application>
