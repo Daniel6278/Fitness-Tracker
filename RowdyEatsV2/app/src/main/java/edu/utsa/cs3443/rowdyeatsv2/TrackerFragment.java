@@ -10,10 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import edu.utsa.cs3443.rowdyeatsv2.Data.Constants;
-import edu.utsa.cs3443.rowdyeatsv2.Data.DatabaseHandler;
-import edu.utsa.cs3443.rowdyeatsv2.Model.Food;
-import edu.utsa.cs3443.rowdyeatsv2.MainActivity;
+
+import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
+import edu.utsa.cs3443.rowdyeatsv2.model.Food;
+import edu.utsa.cs3443.rowdyeatsv2.DetailFoodActivity;
+
 public class TrackerFragment extends Fragment {
 
     private EditText food, calories; // Assuming these are the correct variable names

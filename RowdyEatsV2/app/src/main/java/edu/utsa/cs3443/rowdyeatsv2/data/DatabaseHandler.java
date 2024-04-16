@@ -1,15 +1,14 @@
-package edu.utsa.cs3443.rowdyeatsv2.Data;
+package edu.utsa.cs3443.rowdyeatsv2.data;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
-import edu.utsa.cs3443.rowdyeatsv2.Model.Food;
+import edu.utsa.cs3443.rowdyeatsv2.model.Food;
 
 import java.text.DateFormat;
 import java.util.ArrayList;

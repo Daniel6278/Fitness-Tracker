@@ -6,9 +6,9 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import edu.utsa.cs3443.rowdyeatsv2.Data.DatabaseHandler;
-import edu.utsa.cs3443.rowdyeatsv2.Model.Food;
-import edu.utsa.cs3443.rowdyeatsv2.Data.CustomDataAdapter;
+import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
+import edu.utsa.cs3443.rowdyeatsv2.model.Food;
+import edu.utsa.cs3443.rowdyeatsv2.data.CustomDataAdapter;
 
 import java.util.ArrayList;
 

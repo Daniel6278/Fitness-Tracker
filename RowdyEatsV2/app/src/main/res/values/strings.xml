@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">RowdyEatsV2</string>
     <string name="UTSALogo">1</string>
+
+    <string name="hintFood">What did you Eat?</string>
+    <string name="Calories">Calories</string>
+    <string name="submit_button">Submit</string>
+
+    <string name="recipe_sushi">lorem ipsum sushi</string>
+    <string name="recipe_bkfst_sandwich">lorem ipsum burger</string>
 </resources>

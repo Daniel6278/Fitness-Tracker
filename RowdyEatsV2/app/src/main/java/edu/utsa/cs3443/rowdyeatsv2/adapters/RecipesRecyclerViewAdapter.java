@@ -36,7 +36,7 @@ public class RecipesRecyclerViewAdapter extends RecyclerView.Adapter<RecipesRecy
         // Set the data to textview and imageview.
         Recipe recyclerData = recipesArrayList.get(position);
         holder.recipeTV.setText(recyclerData.getTitle());
-        holder.recipeIV.setImageResource(recyclerData.getImgid());
+        holder.recipeIV.setImageResource(recyclerData.getImgId());
 
         holder.itemView.setOnClickListener(view -> {
             if (onClickListener != null) {

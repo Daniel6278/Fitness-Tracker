@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -20,12 +18,6 @@ import edu.utsa.cs3443.rowdyeatsv2.adapters.RecipesRecyclerViewAdapter;
 import edu.utsa.cs3443.rowdyeatsv2.model.Recipe;
 
 public class RecipesOverviewFragment extends Fragment {
-
-    private void initRecipesModels(ArrayList<Recipe> list) {
-        // add data to array list
-        list.add(new Recipe("Sushi",R.drawable.recipe_sushi, R.string.recipe_sushi));
-        list.add(new Recipe("Breakfast Sandwich",R.drawable.recipe_bkfst_sandwich, R.string.recipe_bkfst_sandwich));
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,9 +31,7 @@ public class RecipesOverviewFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recipesRV);
 
         // created new array list..
-        ArrayList<Recipe> recyclerDataArrayList = new ArrayList<>();
-
-        initRecipesModels(recyclerDataArrayList);
+        ArrayList<Recipe> recyclerDataArrayList = Recipe.getRecipesModels();
 
         // added data from arraylist to adapter class.
         RecipesRecyclerViewAdapter adapter = new RecipesRecyclerViewAdapter(recyclerDataArrayList, view.getContext());
@@ -58,7 +48,7 @@ public class RecipesOverviewFragment extends Fragment {
                 */
 
                 edu.utsa.cs3443.rowdyeatsv2.RecipesOverviewFragmentDirections.ActionRecipesOverviewToRecipeDetails action =
-                        RecipesOverviewFragmentDirections.actionRecipesOverviewToRecipeDetails(model.getTitle(),model.getImgid(),model.getRecipeBodyId());
+                        RecipesOverviewFragmentDirections.actionRecipesOverviewToRecipeDetails(model.getTitle(),model.getImgId(),model.getRecipeBodyId());
 
                 Navigation.findNavController(view).navigate(action);
             }

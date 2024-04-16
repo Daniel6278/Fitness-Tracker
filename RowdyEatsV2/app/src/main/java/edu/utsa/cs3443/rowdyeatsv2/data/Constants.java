@@ -1,4 +1,4 @@
-package edu.utsa.cs3443.rowdyeatsv2.Data;
+package edu.utsa.cs3443.rowdyeatsv2.data;
 
 public class Constants {
 

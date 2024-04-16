@@ -6,6 +6,10 @@
         <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryDark">@color/orange_dark</item>
         <item name="colorAccent">@color/blue</item>
+
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/app_logo_transparent</item>
+
     </style>
 
 </resources>
