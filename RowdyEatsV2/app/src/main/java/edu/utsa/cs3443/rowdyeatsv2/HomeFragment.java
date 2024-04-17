@@ -33,8 +33,7 @@ public class HomeFragment extends Fragment {
     private boolean isTextChangeHandled = true;
     private String nameTextBoxContents = "";
 
-    private void writeNameToPrefs(String name) {
-        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+    private void writeNameToPrefs(SharedPreferences sharedPref, String name) {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(getString(R.string.preferences_name_key), name);
         editor.apply();
@@ -101,7 +100,7 @@ public class HomeFragment extends Fragment {
                         if (lastTypedTime != epoch) {
                             return;
                         }
-                        writeNameToPrefs(s.toString());
+                        writeNameToPrefs(sharedPref, s.toString());
                     }
                 }, NAME_SAVE_DELAY_MS);
 
