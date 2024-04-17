@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
-import edu.utsa.cs3443.rowdyeatsv2.model.FoodRecord;
+import edu.utsa.cs3443.rowdyeatsv2.Model.FoodRecord;
 
 import java.text.DateFormat;
 import java.util.ArrayList;

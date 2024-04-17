@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -16,8 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.adapters.CustomDataAdapter;
-import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
-import edu.utsa.cs3443.rowdyeatsv2.model.FoodRecord;
+import edu.utsa.cs3443.rowdyeatsv2.Model.FoodRecord;
 
 public class TrackerFragment extends Fragment {
 

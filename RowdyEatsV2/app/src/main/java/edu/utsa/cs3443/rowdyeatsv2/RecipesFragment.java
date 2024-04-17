@@ -8,13 +8,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-
-import edu.utsa.cs3443.rowdyeatsv2.adapters.RecipesRecyclerViewAdapter;
-import edu.utsa.cs3443.rowdyeatsv2.model.Recipe;
 
 public class RecipesFragment extends Fragment {
 

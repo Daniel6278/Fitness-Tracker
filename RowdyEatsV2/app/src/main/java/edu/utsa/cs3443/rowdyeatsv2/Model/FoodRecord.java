@@ -1,4 +1,4 @@
-package edu.utsa.cs3443.rowdyeatsv2.model;
+package edu.utsa.cs3443.rowdyeatsv2.Model;
 
 import java.io.Serializable;
 

@@ -2,9 +2,7 @@ package edu.utsa.cs3443.rowdyeatsv2;
 
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -16,7 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
-import edu.utsa.cs3443.rowdyeatsv2.model.FoodRecord;
+import edu.utsa.cs3443.rowdyeatsv2.Model.FoodRecord;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationBarView

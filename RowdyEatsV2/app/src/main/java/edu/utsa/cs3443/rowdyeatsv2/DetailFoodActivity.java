@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
-import edu.utsa.cs3443.rowdyeatsv2.model.FoodRecord;
+import edu.utsa.cs3443.rowdyeatsv2.Model.FoodRecord;
 import edu.utsa.cs3443.rowdyeatsv2.adapters.CustomDataAdapter;
 
 import java.util.ArrayList;

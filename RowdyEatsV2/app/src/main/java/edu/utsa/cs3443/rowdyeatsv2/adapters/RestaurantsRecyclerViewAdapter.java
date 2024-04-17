@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.R;
-import edu.utsa.cs3443.rowdyeatsv2.model.Restaurant;
+import edu.utsa.cs3443.rowdyeatsv2.Model.Restaurant;
 
 public class RestaurantsRecyclerViewAdapter extends RecyclerView.Adapter<RestaurantsRecyclerViewAdapter.RecyclerViewHolder> {
     private OnClickListener onClickListener;

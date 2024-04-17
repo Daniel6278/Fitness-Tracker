@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.adapters.RecipesRecyclerViewAdapter;
-import edu.utsa.cs3443.rowdyeatsv2.model.Recipe;
+import edu.utsa.cs3443.rowdyeatsv2.Model.Recipe;
 
 public class RecipesOverviewFragment extends Fragment {
 

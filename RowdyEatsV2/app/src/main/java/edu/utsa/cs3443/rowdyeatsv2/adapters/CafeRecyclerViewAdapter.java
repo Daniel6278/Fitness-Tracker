@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.R;
-import edu.utsa.cs3443.rowdyeatsv2.model.FoodPreset;
+import edu.utsa.cs3443.rowdyeatsv2.Model.FoodPreset;
 
 public class CafeRecyclerViewAdapter extends RecyclerView.Adapter<CafeRecyclerViewAdapter.RecyclerViewHolder> {
     private OnClickListener onClickListener;

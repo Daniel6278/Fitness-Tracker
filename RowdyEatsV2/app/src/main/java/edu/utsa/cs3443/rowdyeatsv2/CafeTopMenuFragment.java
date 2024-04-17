@@ -16,9 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import edu.utsa.cs3443.rowdyeatsv2.adapters.RecipesRecyclerViewAdapter;
 import edu.utsa.cs3443.rowdyeatsv2.adapters.RestaurantsRecyclerViewAdapter;
-import edu.utsa.cs3443.rowdyeatsv2.model.Restaurant;
+import edu.utsa.cs3443.rowdyeatsv2.Model.Restaurant;
 
 public class CafeTopMenuFragment extends Fragment {
 
