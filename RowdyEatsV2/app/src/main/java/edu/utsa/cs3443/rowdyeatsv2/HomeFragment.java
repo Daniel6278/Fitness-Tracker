@@ -93,15 +93,49 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+        //Drop down buttons on HomeScreen
         Button btnMenu1 = view.findViewById(R.id.btnMenu1);
         final TextView txtDropdown1 = view.findViewById(R.id.txtDropdown1);
-
         btnMenu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View _view) {
                 // Toggle visibility of the dropdown text
                 isMenu1Visible = !isMenu1Visible;
                 txtDropdown1.setVisibility(isMenu1Visible ? View.VISIBLE : View.GONE);
+            }
+        });
+
+        Button btnMenu2 = view.findViewById(R.id.btnMenu2);
+        final TextView txtDropdown2 = view.findViewById(R.id.txtDropdown2);
+        btnMenu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View _view) {
+                // Toggle visibility of the dropdown text
+                isMenu1Visible = !isMenu1Visible;
+                txtDropdown2.setVisibility(isMenu1Visible ? View.VISIBLE : View.GONE);
+            }
+        });
+
+        Button btnMenu3 = view.findViewById(R.id.btnMenu3);
+        final TextView txtDropdown3 = view.findViewById(R.id.txtDropdown3);
+        btnMenu3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View _view) {
+                // Toggle visibility of the dropdown text
+                isMenu1Visible = !isMenu1Visible;
+                txtDropdown3.setVisibility(isMenu1Visible ? View.VISIBLE : View.GONE);
+            }
+        });
+
+        Button btnMenu4 = view.findViewById(R.id.btnMenu4);
+        final TextView txtDropdown4 = view.findViewById(R.id.txtDropdown4);
+        btnMenu4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View _view) {
+                // Toggle visibility of the dropdown text
+                isMenu1Visible = !isMenu1Visible;
+                txtDropdown4.setVisibility(isMenu1Visible ? View.VISIBLE : View.GONE);
             }
         });
     }

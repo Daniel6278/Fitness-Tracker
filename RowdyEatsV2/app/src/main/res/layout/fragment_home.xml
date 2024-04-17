@@ -10,24 +10,66 @@
         android:id="@+id/imgLogo"
         android:layout_width="300dp"
         android:layout_height="150dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:contentDescription="@string/UTSALogo"
         android:src="@drawable/app_logo_transparent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/blue" />
 
     <Button
         android:id="@+id/btnMenu1"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="128dp"
         android:text="Menu 1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        android:textColor="@color/blue" />
+
+    <Button
+        android:id="@+id/btnMenu2"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Menu 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMenu1"
+        android:textColor="@color/blue" />
+
+    <Button
+        android:id="@+id/btnMenu3"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Menu 3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMenu2"
+        android:textColor="@color/blue" />
+
+    <Button
+        android:id="@+id/btnMenu4"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Menu 4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMenu3"
+        android:textColor="@color/blue" />
 
     <TextView
         android:id="@+id/txtDropdown1"
@@ -40,17 +82,50 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/userGreeting"
+        android:id="@+id/txtDropdown2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Explanation for Menu 2"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnMenu2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
-        android:text="Welcome to\nRowdyEats,"
-        android:textAppearance="@style/TextAppearance.RowdyEats.DisplayMedium"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtDropdown3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explanation for Menu 3"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnMenu3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtDropdown4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explanation for Menu 4"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnMenu4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/userGreeting"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="25dp"
+        android:text="Welcome to RowdyEats!"
+        android:textAppearance="@style/TextAppearance.RowdyEats.DisplayMedium"
+        android:textColor="@color/orange_dark"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
 
     <EditText
         android:id="@+id/editTextName"
