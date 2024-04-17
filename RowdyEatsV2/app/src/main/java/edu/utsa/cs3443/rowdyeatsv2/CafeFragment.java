@@ -22,7 +22,7 @@ public class CafeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cafe, container, false);
-        listView = view.findViewById(R.id.listViewCafe);
+        //listView = view.findViewById(R.id.listViewCafe);
         dba = new DatabaseHandler(getActivity());
         refreshData();
         return view;
