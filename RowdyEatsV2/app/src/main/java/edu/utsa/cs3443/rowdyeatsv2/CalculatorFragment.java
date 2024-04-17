@@ -81,6 +81,8 @@ public class CalculatorFragment extends Fragment {
                 (10 * weightInKg + 6.25 * heightInCm - 5 * age + 5) :
                 (10 * weightInKg + 6.25 * heightInCm - 5 * age - 161);
          */
+
+        // Harris-Benedict Equation
         double bmr = (gender.equalsIgnoreCase("male")) ?
                 66 + (13.7 * weightInKg) + (5 * heightInCm) - (6.8 * age) :
                 655 + (9.6 * weightInKg) + (1.8 * heightInCm) - (4.7 * age);
