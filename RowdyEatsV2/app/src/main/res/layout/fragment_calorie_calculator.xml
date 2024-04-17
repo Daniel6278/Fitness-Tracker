@@ -92,9 +92,9 @@
 
     <EditText
         android:id="@+id/ageInput"
-        android:layout_width="174dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="44dp"
+        android:layout_width="213dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="80dp"
         android:hint="Age"
         android:inputType="number"
@@ -182,42 +182,49 @@
         android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="132dp"
         android:text="Calculate"
         android:textColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/resultText"
-        android:layout_width="167dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="104dp"
-        android:textColor="@color/blue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:gravity="center"
+        android:text="Result will show here"
+        app:layout_constraintTop_toBottomOf="@id/calculateButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/activitySelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="212dp"
         android:text="Select Activity Level:"
         android:textColor="@color/blue"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="268dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
+        app:layout_constraintWidth_percent="0.5" />
 
     <TextView
         android:id="@+id/genderSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
         android:text="Select Gender:"
         android:textColor="@color/blue"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="191dp" />
+        app:layout_constraintEnd_toEndOf="@+id/heightSelect"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
+        app:layout_constraintWidth_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
