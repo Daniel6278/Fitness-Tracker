@@ -13,8 +13,8 @@ public class Restaurant {
         list.add(new Restaurant("Chick-fil-A", R.drawable.chickfilalogo));
         list.add(new Restaurant("Subway",R.drawable.subwaylogo));
         list.add(new Restaurant("SushiC",R.drawable.sushiclogo));
-        list.add(new Restaurant("Einstein Bros. Bagels",R.drawable.restaurant_logo_einsteinBrosBagels));
-        list.add(new Restaurant("Dragon Bowl Z",R.drawable.restaurant_logo_dragonBowlZ));
+        list.add(new Restaurant("Einstein Bros. Bagels",R.drawable.restaurant_logo_einsteinbrosbagels));
+        list.add(new Restaurant("Dragon Bowl Z",R.drawable.restaurant_logo_dragonbowlz));
         return list;
     }
     private String title;
