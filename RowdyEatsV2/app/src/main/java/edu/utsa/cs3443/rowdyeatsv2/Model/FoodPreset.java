@@ -11,10 +11,25 @@ public class FoodPreset {
 
     private int imgId;
 
-    public static ArrayList<FoodPreset> getModels() {
+    public static ArrayList<FoodPreset> getModels(String parentCategoryName) {
         ArrayList<FoodPreset> list = new ArrayList<>();
-        // add data to array list
-        list.add(new FoodPreset("Chick-Fil-A", 100, R.drawable.chickfilalogo));
+
+        switch (parentCategoryName) {
+            // add data to array list
+            // TODO : make this stuff not hardcoded
+            case "Chick-Fil-A":
+                list.add(new FoodPreset("Chicken Sandwich", 450, R.drawable.chickfilalogo));
+                list.add(new FoodPreset("Spicy Chicken Sandwich", 450, R.drawable.chickfilalogo));
+                list.add(new FoodPreset("Deluxe Chicken Sandwich", 500, R.drawable.chickfilalogo));
+                list.add(new FoodPreset("Spixy Deluxe Chicken Sandwich", 500, R.drawable.chickfilalogo));
+                break;
+            case "Suchi-C":
+                list.add(new FoodPreset("Fish", 50, R.drawable.recipe_sushi));
+                break;
+            case "Subway":
+                list.add(new FoodPreset("Subway Club (6\")", 750, R.drawable.subwaylogo));
+                break;
+        }
         return list;
     }
     public FoodPreset() {

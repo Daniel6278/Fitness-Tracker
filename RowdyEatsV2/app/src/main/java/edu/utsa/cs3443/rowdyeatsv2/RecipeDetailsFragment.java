@@ -17,11 +17,6 @@ import android.widget.TextView;
 
 public class RecipeDetailsFragment extends Fragment {
 
-    // private String toolbarTitle;
-    // private int bodyTextId;
-
-    // private View view;
-
     public RecipeDetailsFragment() {
         // Required empty public constructor
     }
@@ -29,18 +24,6 @@ public class RecipeDetailsFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*
-        getParentFragmentManager().setFragmentResultListener("requestKey", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
-                // We use a String here, but any type that can be put in a Bundle is supported.
-                Bundle result = bundle.getBundle("fillRecipeDetails");
-                // Do something with the result.
-                toolbarTitle = result.getString("heading");
-                bodyTextId = result.getInt("body");
-            }
-        });
-        */
     }
 
     @Override

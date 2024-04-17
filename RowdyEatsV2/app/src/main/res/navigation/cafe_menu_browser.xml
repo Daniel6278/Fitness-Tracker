@@ -13,10 +13,6 @@
             app:destination="@id/cafeSubMenuFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim">
-
-            <argument
-                android:name="head"
-                app:argType="string"/>
         </action>
     </fragment>
     <fragment
@@ -29,6 +25,10 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" >
         </action>
+
+        <argument
+            android:name="head"
+            app:argType="string"/>
 
     </fragment>
 </navigation>

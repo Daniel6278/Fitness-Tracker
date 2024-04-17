@@ -9,6 +9,7 @@ public class Restaurant {
     public static ArrayList<Restaurant> getModels() {
         ArrayList<Restaurant> list = new ArrayList<>();
         // add data to array list
+        // TODO : make this stuff not hardcoded
         list.add(new Restaurant("Chick-Fil-A", R.drawable.chickfilalogo));
         list.add(new Restaurant("Subway",R.drawable.subwaylogo));
         list.add(new Restaurant("Sushi-C",R.drawable.sushiclogo));

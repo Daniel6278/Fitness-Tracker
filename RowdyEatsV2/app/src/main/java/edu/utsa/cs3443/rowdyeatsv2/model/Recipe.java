@@ -10,6 +10,7 @@ public class Recipe {
     public static ArrayList<Recipe> getRecipesModels() {
         ArrayList<Recipe> list = new ArrayList<>();
         // add data to array list
+        // TODO : make this stuff not hardcoded
         list.add(new Recipe("Sushi", R.drawable.recipe_sushi, R.string.recipe_sushi));
         list.add(new Recipe("Breakfast Sandwich",R.drawable.recipe_bkfst_sandwich, R.string.recipe_bkfst_sandwich));
         return list;

@@ -30,10 +30,12 @@ public class CafeSubMenuFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        CafeSubMenuFragmentArgs args = CafeSubMenuFragmentArgs.fromBundle(getArguments());
+
         RecyclerView recyclerView = view.findViewById(R.id.cafeSubRV);
 
         // created new array list..
-        ArrayList<FoodPreset> recyclerDataArrayList = FoodPreset.getModels();
+        ArrayList<FoodPreset> recyclerDataArrayList = FoodPreset.getModels(args.getHead());
 
         // added data from arraylist to adapter class.
         CafeRecyclerViewAdapter adapter = new CafeRecyclerViewAdapter(recyclerDataArrayList, view.getContext());
