@@ -75,7 +75,7 @@ public class CalculatorFragment extends Fragment {
         double heightInCm = ((feet * 12) + inches) * 2.54; // Convert height from feet and inches to cm
         double weightInKg = weightPounds / 2.20462; // Convert weight from pounds to kilograms
 
-        // Calculate Basal Metabolic Rate (BMR) using Mifflin-St Jeor Equation
+
         double bmr = (gender.equalsIgnoreCase("male")) ?
                 (10 * weightInKg + 6.25 * heightInCm - 5 * age + 5) :
                 (10 * weightInKg + 6.25 * heightInCm - 5 * age - 161);
