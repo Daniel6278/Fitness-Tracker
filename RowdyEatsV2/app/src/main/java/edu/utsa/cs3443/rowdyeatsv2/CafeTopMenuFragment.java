@@ -53,8 +53,7 @@ public class CafeTopMenuFragment extends Fragment {
         // setting grid layout manager to implement grid view.
         // in this method '2' represents number of columns to be displayed in grid view.
         Context rvContext = recyclerView.getContext();
-        LinearLayoutManager layoutManager = new LinearLayoutManager(rvContext);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(rvContext,LinearLayoutManager.VERTICAL,false);
         recyclerView.addItemDecoration(new DividerItemDecoration(rvContext,
                 layoutManager.getOrientation()));
 
