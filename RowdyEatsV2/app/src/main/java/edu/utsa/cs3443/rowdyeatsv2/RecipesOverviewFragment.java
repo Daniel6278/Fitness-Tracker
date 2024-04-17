@@ -31,7 +31,7 @@ public class RecipesOverviewFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recipesRV);
 
         // created new array list..
-        ArrayList<Recipe> recyclerDataArrayList = Recipe.getRecipesModels();
+        ArrayList<Recipe> recyclerDataArrayList = Recipe.getModels();
 
         // added data from arraylist to adapter class.
         RecipesRecyclerViewAdapter adapter = new RecipesRecyclerViewAdapter(recyclerDataArrayList, view.getContext());

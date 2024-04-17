@@ -1,13 +1,12 @@
 package edu.utsa.cs3443.rowdyeatsv2.model;
 
-import java.sql.Array;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.R;
 
 public class Recipe {
 
-    public static ArrayList<Recipe> getRecipesModels() {
+    public static ArrayList<Recipe> getModels() {
         ArrayList<Recipe> list = new ArrayList<>();
         // add data to array list
         // TODO : make this stuff not hardcoded
