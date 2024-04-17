@@ -6,20 +6,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.R;
-import edu.utsa.cs3443.rowdyeatsv2.model.Recipe;
+import edu.utsa.cs3443.rowdyeatsv2.model.FoodPreset;
 
-public class RecipesRecyclerViewAdapter extends RecyclerView.Adapter<RecipesRecyclerViewAdapter.RecyclerViewHolder> {
+public class CafeRecyclerViewAdapter extends RecyclerView.Adapter<CafeRecyclerViewAdapter.RecyclerViewHolder> {
     private OnClickListener onClickListener;
-    private ArrayList<Recipe> recipesArrayList;
+    private ArrayList<FoodPreset> cafeArrayList;
     private Context mcontext;
 
-    public RecipesRecyclerViewAdapter(ArrayList<Recipe> recyclerDataArrayList, Context mcontext) {
-        this.recipesArrayList = recyclerDataArrayList;
+    public CafeRecyclerViewAdapter(ArrayList<FoodPreset> recyclerDataArrayList, Context mcontext) {
+        this.cafeArrayList = recyclerDataArrayList;
         this.mcontext = mcontext;
     }
 
@@ -34,13 +36,14 @@ public class RecipesRecyclerViewAdapter extends RecyclerView.Adapter<RecipesRecy
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
         // Set the data to textview and imageview.
-        Recipe recyclerData = recipesArrayList.get(position);
-        holder.recipeTV.setText(recyclerData.getTitle());
-        holder.recipeIV.setImageResource(recyclerData.getImgId());
+        FoodPreset recyclerData = cafeArrayList.get(position);
+        holder.tvName.setText(recyclerData.getFoodName());
+        holder.tvCalories.setText(recyclerData.getCalories());
+        holder.iv.setImageResource(recyclerData.getImgId());
 
         holder.itemView.setOnClickListener(view -> {
             if (onClickListener != null) {
-                onClickListener.onClick(position, recipesArrayList.get(position));
+                onClickListener.onClick(position, cafeArrayList.get(position));
             }
         });
     }
@@ -50,25 +53,26 @@ public class RecipesRecyclerViewAdapter extends RecyclerView.Adapter<RecipesRecy
     }
 
     public interface OnClickListener {
-        void onClick(int position, Recipe model);
+        void onClick(int position, FoodPreset model);
     }
 
     @Override
     public int getItemCount() {
         // this method returns the size of recyclerview
-        return recipesArrayList.size();
+        return cafeArrayList.size();
     }
 
     // View Holder Class to handle Recycler View.
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView recipeTV;
-        private ImageView recipeIV;
+        private TextView tvName, tvCalories;
+        private ImageView iv;
 
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-            recipeTV = itemView.findViewById(R.id.recipe_title);
-            recipeIV = itemView.findViewById(R.id.recipe_image);
+            tvName = itemView.findViewById(R.id.food_preset_name);
+            tvCalories = itemView.findViewById(R.id.food_preset_calories);
+            iv = itemView.findViewById(R.id.food_preset_image);
         }
     }
 }

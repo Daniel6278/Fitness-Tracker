@@ -2,17 +2,17 @@ package edu.utsa.cs3443.rowdyeatsv2.model;
 
 import java.io.Serializable;
 
-public class Food implements Serializable {
+public class FoodRecord implements Serializable {
 
     private String foodName, recordDate;
     private int calories, foodId;
     private static final long serialVersionUID = 10L;
 
 
-    public Food() {
+    public FoodRecord() {
     }
 
-    public Food(String foodName, int calories) {
+    public FoodRecord(String foodName, int calories) {
         this.foodName = foodName;
         this.calories = calories;
     }

@@ -9,14 +9,14 @@ import androidx.fragment.app.Fragment;
 
 import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
 import edu.utsa.cs3443.rowdyeatsv2.data.CustomDataAdapter;
-import edu.utsa.cs3443.rowdyeatsv2.model.Food;
+import edu.utsa.cs3443.rowdyeatsv2.model.FoodRecord;
 
 import java.util.ArrayList;
 
 public class CafeFragment extends Fragment {
     private ListView listView;
     private CustomDataAdapter foodAdapter;
-    private ArrayList<Food> foodArrayList;
+    private ArrayList<FoodRecord> foodArrayList;
     private DatabaseHandler dba;
 
     @Override
@@ -30,7 +30,7 @@ public class CafeFragment extends Fragment {
 
     private void refreshData() {
         foodArrayList = dba.getAllFood();
-        foodAdapter = new CustomDataAdapter(getActivity(), R.layout.list_row, foodArrayList);
+        foodAdapter = new CustomDataAdapter(getActivity(), R.layout.list_row_recorded_food, foodArrayList);
         listView.setAdapter(foodAdapter);
     }
 }

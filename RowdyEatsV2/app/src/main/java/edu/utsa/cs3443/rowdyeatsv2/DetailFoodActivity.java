@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
-import edu.utsa.cs3443.rowdyeatsv2.model.Food;
+import edu.utsa.cs3443.rowdyeatsv2.model.FoodRecord;
 import edu.utsa.cs3443.rowdyeatsv2.data.CustomDataAdapter;
 
 import java.util.ArrayList;
@@ -16,10 +16,10 @@ import java.util.ArrayList;
 public class DetailFoodActivity extends AppCompatActivity {
 
     private DatabaseHandler dba;
-    private ArrayList<Food> foodArrayList = new ArrayList<>();
+    private ArrayList<FoodRecord> foodArrayList = new ArrayList<>();
     private CustomDataAdapter foodAdapter;
     private ListView listView;
-    private Food myFood;
+    private FoodRecord myFood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class DetailFoodActivity extends AppCompatActivity {
     private void refreshData() {
         foodArrayList.clear();
         dba = new DatabaseHandler(getApplicationContext());
-        ArrayList<Food> foodsFromDB = dba.getAllFood();
+        ArrayList<FoodRecord> foodsFromDB = dba.getAllFood();
 
         for (int i = 0; i < foodsFromDB.size(); i++) {
             String name = foodsFromDB.get(i).getFoodName();
@@ -43,7 +43,7 @@ public class DetailFoodActivity extends AppCompatActivity {
             int cals = foodsFromDB.get(i).getCalories();
             int foodId = foodsFromDB.get(i).getFoodId();
 
-            myFood = new Food();
+            myFood = new FoodRecord();
             myFood.setFoodName(name);
             myFood.setCalories(cals);
             myFood.setRecordDate(dateText);
@@ -54,7 +54,7 @@ public class DetailFoodActivity extends AppCompatActivity {
         dba.close();
 
         //setup Adapter
-        foodAdapter = new CustomDataAdapter(DetailFoodActivity.this, R.layout.list_row, foodArrayList);
+        foodAdapter = new CustomDataAdapter(DetailFoodActivity.this, R.layout.list_row_recorded_food, foodArrayList);
         listView.setAdapter(foodAdapter);
         foodAdapter.setNotifyOnChange(true);
     }

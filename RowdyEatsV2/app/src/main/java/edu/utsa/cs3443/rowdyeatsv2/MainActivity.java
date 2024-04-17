@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
                 .setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.nav_btn_home);
     }
-    CafeFragment cafeFragment = new CafeFragment();
+    CafeFragment2 cafeFragment = new CafeFragment2();
     CalculatorFragment calculatorFragment = new CalculatorFragment();
     HomeFragment homeFragment = new HomeFragment();
     RecipesFragment recipesFragment = new RecipesFragment();

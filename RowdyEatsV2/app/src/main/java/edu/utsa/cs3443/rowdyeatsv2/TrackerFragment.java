@@ -9,11 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
-import edu.utsa.cs3443.rowdyeatsv2.model.Food;
+import edu.utsa.cs3443.rowdyeatsv2.model.FoodRecord;
 
 public class TrackerFragment extends Fragment {
 
@@ -46,7 +44,7 @@ public class TrackerFragment extends Fragment {
 
         if (!name.isEmpty() && !cal.isEmpty()) {
             int calInt = Integer.parseInt(cal);
-            Food newFood = new Food();
+            FoodRecord newFood = new FoodRecord();
             newFood.setFoodName(name);
             newFood.setCalories(calInt);
 

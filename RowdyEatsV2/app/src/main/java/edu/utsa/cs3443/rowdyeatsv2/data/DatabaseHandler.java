@@ -8,14 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
-import edu.utsa.cs3443.rowdyeatsv2.model.Food;
+import edu.utsa.cs3443.rowdyeatsv2.model.FoodRecord;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
-    private final ArrayList<Food> foodList = new ArrayList<>();
+    private final ArrayList<FoodRecord> foodList = new ArrayList<>();
 
     public DatabaseHandler(@Nullable Context context) {
         super(context, Constants.DATABASE_NAME, null, Constants.DATABASE_VERSION);
@@ -41,7 +41,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //add food method
-    public void addFood(Food food) {
+    public void addFood(FoodRecord food) {
         SQLiteDatabase dba = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Constants.FOOD_NAME, food.getFoodName());
@@ -53,7 +53,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         dba.close();
     }
 
-    public ArrayList<Food> getAllFood() {
+    public ArrayList<FoodRecord> getAllFood() {
         foodList.clear();
         SQLiteDatabase dba = this.getReadableDatabase();
         Cursor cursor = dba.query(Constants.TABLE_NAME,
@@ -62,7 +62,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                Food food = new Food();
+                FoodRecord food = new FoodRecord();
 
                 int foodNameIndex = cursor.getColumnIndex(Constants.FOOD_NAME);
                 int caloriesIndex = cursor.getColumnIndex(Constants.CALORIES);
