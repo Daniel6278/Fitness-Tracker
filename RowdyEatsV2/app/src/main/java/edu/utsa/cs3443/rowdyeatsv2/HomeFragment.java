@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
         Toast.makeText(getContext(), "Name Changed!", Toast.LENGTH_LONG).show();
     }
 
-    private boolean isMenu1Visible = false;
+    private boolean[] areMenusVisible = {false,false,false,false};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -108,50 +108,35 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        final int[] btnsIds = {
+                R.id.btnMenu1,
+                R.id.btnMenu2,
+                R.id.btnMenu3,
+                R.id.btnMenu4,
+        };
+        final int[] dropdownsIds = {
+                R.id.txtDropdown1,
+                R.id.txtDropdown2,
+                R.id.txtDropdown3,
+                R.id.txtDropdown4,
+        };
 
-        //Drop down buttons on HomeScreen
-        Button btnMenu1 = view.findViewById(R.id.btnMenu1);
-        final TextView txtDropdown1 = view.findViewById(R.id.txtDropdown1);
-        btnMenu1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View _view) {
-                // Toggle visibility of the dropdown text
-                isMenu1Visible = !isMenu1Visible;
-                txtDropdown1.setVisibility(isMenu1Visible ? View.VISIBLE : View.GONE);
-            }
-        });
+        for (int i = 0; i < btnsIds.length; ++i) {
 
-        Button btnMenu2 = view.findViewById(R.id.btnMenu2);
-        final TextView txtDropdown2 = view.findViewById(R.id.txtDropdown2);
-        btnMenu2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View _view) {
-                // Toggle visibility of the dropdown text
-                isMenu1Visible = !isMenu1Visible;
-                txtDropdown2.setVisibility(isMenu1Visible ? View.VISIBLE : View.GONE);
-            }
-        });
+            //Drop down buttons on HomeScreen
+            final Button btnMenu = view.findViewById(btnsIds[i]);
+            final TextView txtDropdown = view.findViewById(dropdownsIds[i]);
 
-        Button btnMenu3 = view.findViewById(R.id.btnMenu3);
-        final TextView txtDropdown3 = view.findViewById(R.id.txtDropdown3);
-        btnMenu3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View _view) {
-                // Toggle visibility of the dropdown text
-                isMenu1Visible = !isMenu1Visible;
-                txtDropdown3.setVisibility(isMenu1Visible ? View.VISIBLE : View.GONE);
-            }
-        });
-
-        Button btnMenu4 = view.findViewById(R.id.btnMenu4);
-        final TextView txtDropdown4 = view.findViewById(R.id.txtDropdown4);
-        btnMenu4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View _view) {
-                // Toggle visibility of the dropdown text
-                isMenu1Visible = !isMenu1Visible;
-                txtDropdown4.setVisibility(isMenu1Visible ? View.VISIBLE : View.GONE);
-            }
-        });
+            final int finalI = i;
+            btnMenu.setOnClickListener(new View.OnClickListener() {
+                final int btnIndex = finalI;
+                @Override
+                public void onClick(View _view) {
+                    // Toggle visibility of the dropdown text
+                    areMenusVisible[btnIndex] = !areMenusVisible[btnIndex];
+                    txtDropdown.setVisibility(areMenusVisible[btnIndex] ? View.VISIBLE : View.GONE);
+                }
+            });
+        }
     }
 }
