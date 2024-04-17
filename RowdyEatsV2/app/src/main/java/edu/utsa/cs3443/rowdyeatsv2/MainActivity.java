@@ -2,6 +2,7 @@ package edu.utsa.cs3443.rowdyeatsv2;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
@@ -98,6 +99,8 @@ public class MainActivity extends AppCompatActivity
 
         mealName = mealName.trim();
         calories = calories.trim();
+        Log.println(Log.INFO,"saveDataTODB:mealName",mealName);
+        Log.println(Log.INFO,"saveDataTODB:calories",calories);
 
         if (mealName.isEmpty() || calories.isEmpty()) {
             Toast.makeText(this, "Please fill in all of the fields", Toast.LENGTH_LONG).show();
@@ -121,14 +124,14 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this, "Meal logged!", Toast.LENGTH_LONG).show();
     }
 
-    public void showTrackerDialog() {
-        showTrackerDialog("","");
+    public void showTrackerDialog(TrackerFragment.RefreshListener r) {
+        showTrackerDialog(r,"","");
     }
-    public void showTrackerDialog(int DBID) {
-        showTrackerDialog();
+    public void showTrackerDialog(TrackerFragment.RefreshListener r,int DBID) {
+        showTrackerDialog(r);
     }
 
-    public void showTrackerDialog(String foodInputContents,String caloriesInputContents) {
+    public void showTrackerDialog(TrackerFragment.RefreshListener r,String foodInputContents,String caloriesInputContents) {
         // Create an alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Meal Log Entry");
@@ -147,6 +150,10 @@ public class MainActivity extends AppCompatActivity
             calories.setText(caloriesInputContents);
 
             saveDataTODB(food.getText().toString(),calories.getText().toString());
+            r.onRefresh(); // refreshes log display
+        });
+        builder.setNegativeButton("Cancel", (dialog, which) -> {
+            dialog.dismiss(); // dismisses the dialog
         });
 
         // create and show the alert dialog

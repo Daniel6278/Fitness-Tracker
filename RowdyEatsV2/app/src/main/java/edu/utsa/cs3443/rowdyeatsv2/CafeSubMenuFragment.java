@@ -62,7 +62,12 @@ public class CafeSubMenuFragment extends Fragment {
         adapter.setOnClickListener(new CafeRecyclerViewAdapter.OnClickListener() {
             @Override
             public void onAddToLog(int position, FoodPreset model) {
-                activity.showTrackerDialog();
+                activity.showTrackerDialog(new TrackerFragment.RefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        // do nothing
+                    }
+                },model.getFoodName(),Integer.toString(model.getCalories()));
             }
 
             @Override
@@ -76,6 +81,7 @@ public class CafeSubMenuFragment extends Fragment {
         // in this method '2' represents number of columns to be displayed in grid view.
         Context rvContext = recyclerView.getContext();
         LinearLayoutManager layoutManager = new LinearLayoutManager(rvContext);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.addItemDecoration(new DividerItemDecoration(rvContext,
                 layoutManager.getOrientation()));
 

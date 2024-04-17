@@ -40,11 +40,20 @@ public class TrackerFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).showTrackerDialog();
+                ((MainActivity)getActivity()).showTrackerDialog(new RefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        refreshData();
+                    }
+                });
             }
         });
 
         refreshData();
+    }
+
+    public interface RefreshListener {
+        public void onRefresh();
     }
 
     private void refreshData() {
