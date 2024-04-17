@@ -29,7 +29,7 @@ public class CafeRecyclerViewAdapter extends RecyclerView.Adapter<CafeRecyclerVi
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Inflate Layout
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_recipe, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row_preset_food, parent, false);
         return new RecyclerViewHolder(view);
     }
 
