@@ -13,6 +13,8 @@ public class Recipe {
         // TODO : make this stuff not hardcoded
         list.add(new Recipe("Sushi", R.drawable.recipe_sushi, R.string.recipe_sushi));
         list.add(new Recipe("Breakfast Sandwich",R.drawable.recipe_bkfst_sandwich, R.string.recipe_bkfst_sandwich));
+        list.add(new Recipe("Pumpkin Mac & Cheese",R.drawable.recipe_pumpkin_mac_n_cheese, R.string.recipe_pumpkin_mac_n_cheese));
+        list.add(new Recipe("Ratatouille",R.drawable.recipe_ratatouille, R.string.recipe_ratatouille));
         return list;
     }
     private String title;

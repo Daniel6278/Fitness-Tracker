@@ -10,9 +10,11 @@ public class Restaurant {
         ArrayList<Restaurant> list = new ArrayList<>();
         // add data to array list
         // TODO : make this stuff not hardcoded
-        list.add(new Restaurant("Chick-Fil-A", R.drawable.chickfilalogo));
+        list.add(new Restaurant("Chick-fil-A", R.drawable.chickfilalogo));
         list.add(new Restaurant("Subway",R.drawable.subwaylogo));
-        list.add(new Restaurant("Sushi-C",R.drawable.sushiclogo));
+        list.add(new Restaurant("SushiC",R.drawable.sushiclogo));
+        list.add(new Restaurant("Einstein Bros. Bagels",R.drawable.restaurant_logo_einsteinBrosBagels));
+        list.add(new Restaurant("Dragon Bowl Z",R.drawable.restaurant_logo_dragonBowlZ));
         return list;
     }
     private String title;

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="175dp"
         android:layout_marginTop="50dp"
-        android:contentDescription="@string/UTSALogo"
+        android:contentDescription="@string/alt_UTSALogo"
         android:src="@drawable/app_logo_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

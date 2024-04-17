@@ -4,12 +4,25 @@
     <string name="preferences_file_key">RowdyEatsPrefs</string>
     <string name="preferences_name_key">RowdyEatsPrefsName</string>
 
-    <string name="UTSALogo">1</string>
+    <string name="alt_UTSALogo">UTSA Logo</string>
 
     <string name="hintFood">What did you eat?</string>
     <string name="Calories">Calories</string>
     <string name="submit_button">Submit</string>
 
+    <!--Recipes-->
     <string name="recipe_sushi">lorem ipsum sushi</string>
     <string name="recipe_bkfst_sandwich">lorem ipsum burger</string>
+    <string name="recipe_ratatouille">
+        <p>Source: <a href="https://tasty.co/recipe/ratatouille">tasty.co/recipe/ratatouille</a></p>
+        <li>Preheat the oven for 375˚F (190˚C).</li>
+        <li>Using a sharp knife or a mandoline, slice the eggplant, tomatoes, squash, and zucchini into approximately ¹⁄₁₆-inch (1-mm)-thick rounds, then set aside.</li>
+        <li>Make the sauce: Heat the olive oil in a 12-inch (30-cm) oven-safe pan over medium-high heat. Sauté the onion, garlic, and bell peppers until soft, about 10 minutes. Season with salt and pepper, then add the crushed tomatoes. Stir until the ingredients are fully incorporated. Remove from heat, then add the basil. Stir once more, then smooth the surface of the sauce with a spatula.</li>
+        <li>Arrange the veggies in alternating slices, (for example, eggplant, tomato, squash, zucchini) on top of the sauce, working from the outer edge to the center of the pan. Season with salt and pepper.</li>
+        <li>Make the herb seasoning: In a small bowl, mix together the basil, garlic, parsley, thyme, salt, pepper, and olive oil. Spoon the herb seasoning over the vegetables.</li>
+        <li>Cover the pan with foil and bake for 40 minutes. Uncover, then bake for another 20 minutes, until the vegetables are softened.</li>
+        <li>Serve hot as a main dish or side. The ratatouille is also excellent the next day–cover with foil and reheat in a 350˚F (180˚C) oven for 15 minutes, or simply microwave to desired temperature.</li>
+        <li>Enjoy!</li>
+    </string>
+    <string name="recipe_pumpkin_mac_n_cheese"></string>
 </resources>

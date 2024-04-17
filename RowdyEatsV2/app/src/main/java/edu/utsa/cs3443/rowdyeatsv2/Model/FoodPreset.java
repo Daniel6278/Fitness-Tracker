@@ -21,9 +21,10 @@ public class FoodPreset {
                 list.add(new FoodPreset("Chicken Sandwich", 450, R.drawable.chickfilalogo));
                 list.add(new FoodPreset("Spicy Chicken Sandwich", 450, R.drawable.chickfilalogo));
                 list.add(new FoodPreset("Deluxe Chicken Sandwich", 500, R.drawable.chickfilalogo));
-                list.add(new FoodPreset("Spixy Deluxe Chicken Sandwich", 500, R.drawable.chickfilalogo));
+                list.add(new FoodPreset("Spicy Deluxe Chicken Sandwich", 500, R.drawable.chickfilalogo));
+                list.add(new FoodPreset("Potato Fries (M)", 200, R.drawable.chickfilalogo));
                 break;
-            case "Suchi-C":
+            case "SuchiC":
                 list.add(new FoodPreset("Fish", 50, R.drawable.recipe_sushi));
                 break;
             case "Subway":
