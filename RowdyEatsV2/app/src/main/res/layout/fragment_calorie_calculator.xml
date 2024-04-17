@@ -57,46 +57,50 @@
         android:id="@+id/weightSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="100dp"
         android:text="Enter Weight:"
+        android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="@+id/heightSelect"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/heightSelect"
-        app:layout_constraintTop_toTopOf="@+id/heightSelect"
-        android:textColor="@color/blue" />
+        app:layout_constraintTop_toTopOf="@+id/heightSelect" />
 
     <EditText
         android:id="@+id/weightInput"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="116dp"
         android:hint="Weight (in pounds)"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/weightSelect"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/weightSelect"
-        app:layout_constraintTop_toBottomOf="@+id/weightSelect" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
+        app:layout_constraintWidth_percent="0.5" />
 
     <TextView
         android:id="@+id/ageSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="80dp"
         android:text="Enter Age:"
-        app:layout_constraintEnd_toEndOf="@+id/weightInput"
-        app:layout_constraintStart_toStartOf="@+id/weightInput"
-        app:layout_constraintTop_toTopOf="@+id/weightInput"
-        android:textColor="@color/blue" />
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/heightSelect"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
+        app:layout_constraintWidth_percent="0.5" />
 
     <EditText
         android:id="@+id/ageInput"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="8dp"
         android:hint="Age"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@+id/ageSelect"
-        app:layout_constraintStart_toStartOf="@+id/ageSelect"
-        app:layout_constraintEnd_toEndOf="@+id/ageSelect"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightSelect"
+        app:layout_constraintWidth_percent="0.5" />
 
     <TextView
         android:id="@+id/genderSelect"
