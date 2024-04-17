@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_marginTop="50dp"
         android:contentDescription="@string/UTSALogo"
         android:src="@drawable/app_logo_transparent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:text="Welcome to\nRowdyEats,"
         android:textAppearance="@style/TextAppearance.RowdyEats.DisplayMedium"
