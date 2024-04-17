@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,9 +30,10 @@ public class HomeFragment extends Fragment {
     }
 
     private long lastTypedTime = 0;
+    private boolean isTextChangeHandled = true;
+    private String nameTextBoxContents = "";
 
-    private void writeNameToPrefs(String name) {
-        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+    private void writeNameToPrefs(SharedPreferences sharedPref, String name) {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(getString(R.string.preferences_name_key), name);
         editor.apply();
@@ -43,6 +45,8 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.println(Log.INFO, "HomeFragment", "onCreateView");
+
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -66,14 +70,23 @@ public class HomeFragment extends Fragment {
         nameBox.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                nameTextBoxContents = s.toString();
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!s.toString().equals(nameTextBoxContents)) {
+                    isTextChangeHandled = false;
+                }
+                nameTextBoxContents = s.toString();
             }
 
             @Override
             public void afterTextChanged(Editable s) {
+                if (isTextChangeHandled) return; // ignore if text box’s contents stayed the same
+                if (!nameBox.hasFocus()) return; // ignore events not caused by user’s typing
+
+                Log.println(Log.INFO, "TextWatcher", "name text box contents edited");
 
                 final int NAME_SAVE_DELAY_MS = 500; // don’t write to the preferences file unless the text box was unchanged for this number of milliseconds
 
@@ -87,9 +100,11 @@ public class HomeFragment extends Fragment {
                         if (lastTypedTime != epoch) {
                             return;
                         }
-                        writeNameToPrefs(s.toString());
+                        writeNameToPrefs(sharedPref, s.toString());
                     }
                 }, NAME_SAVE_DELAY_MS);
+
+                isTextChangeHandled = true;
             }
         });
 

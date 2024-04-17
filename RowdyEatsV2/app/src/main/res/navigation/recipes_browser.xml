@@ -11,7 +11,9 @@
         android:label="RecipesFragment" >
         <action
             android:id="@+id/action_recipesOverview_to_recipeDetails"
-            app:destination="@id/recipeDetails" />
+            app:destination="@id/recipeDetails"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"/>
     </fragment>
     <fragment
         android:id="@+id/recipeDetails"
@@ -21,10 +23,8 @@
         <action
             android:id="@+id/action_recipeDetails_to_recipesOverview"
             app:destination="@id/recipesOverview"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right"
-            app:popEnterAnim="@android:anim/slide_in_left"
-            app:popExitAnim="@android:anim/slide_out_right" />
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <argument
             android:name="head"
             app:argType="string"/>

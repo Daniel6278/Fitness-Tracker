@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-
-        <!-- parent="Theme.MaterialComponents.Light.DarkActionBar" -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <item name="android:statusBarColor">
-            @android:color/transparent
+            @color/blue
         </item>
         <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryDark">@color/orange_dark</item>
@@ -19,13 +17,19 @@
         <!-- Typography -->
         <item name="textAppearanceDisplayLarge">@style/TextAppearance.RowdyEats.DisplayLarge</item>
         <item name="textAppearanceDisplayMedium">@style/TextAppearance.RowdyEats.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.RowdyEats.DisplaySmall</item>
         <item name="textAppearanceBodyLarge">@style/TextAppearance.RowdyEats.BodyLarge</item>
-        <item name="textAppearanceBodyMedium">@style/TextAppearance.RowdyEats.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.RowdyEats.BodyMedium</item>
         <item name="textAppearanceHeadline1">@style/TextAppearance.RowdyEats.H1</item>
         <item name="textAppearanceHeadline2">@style/TextAppearance.RowdyEats.H2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.RowdyEats.H3</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.RowdyEats.H1</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.RowdyEats.H2</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.RowdyEats.H3</item>
 
     </style>
 
+    <!-- splash screen -->
     <style name="Theme.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/app_logo_transparent</item>
@@ -43,23 +47,36 @@
         <item name="android:textSize">32sp</item>
         <item name="android:fontWeight">300</item>
     </style>
+    <style name="TextAppearance.RowdyEats.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:fontWeight">300</item>
+    </style>
     <style name="TextAppearance.RowdyEats.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">18sp</item>
     </style>
-    <style name="TextAppearance.RowdyEats.BodyMedium" parent="TextAppearance.Material3.BodyLarge">
+    <style name="TextAppearance.RowdyEats.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">16sp</item>
     </style>
-    <style name="TextAppearance.RowdyEats.H1" parent="TextAppearance.Material3.LabelLarge">
+    <style name="TextAppearance.RowdyEats.H1" parent="TextAppearance.Material3.HeadlineLarge">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">24sp</item>
         <item name="android:fontWeight">500</item>
+        <item name="lineHeight">@null</item>
     </style>
-    <style name="TextAppearance.RowdyEats.H2" parent="TextAppearance.Material3.LabelLarge">
+    <style name="TextAppearance.RowdyEats.H2" parent="TextAppearance.Material3.HeadlineMedium">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">20sp</item>
         <item name="android:fontWeight">600</item>
+        <item name="lineHeight">@null</item>
+    </style>
+    <style name="TextAppearance.RowdyEats.H3" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontWeight">700</item>
+        <item name="lineHeight">@null</item>
     </style>
 
 </resources>
