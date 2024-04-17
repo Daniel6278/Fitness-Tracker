@@ -17,7 +17,7 @@ public class FoodPreset {
         switch (parentCategoryName) {
             // add data to array list
             // TODO : make this stuff not hardcoded
-            case "Chick-Fil-A":
+            case "Chick-fil-A":
                 list.add(new FoodPreset("Chicken Sandwich", 450, R.drawable.chickfilalogo));
                 list.add(new FoodPreset("Spicy Chicken Sandwich", 450, R.drawable.chickfilalogo));
                 list.add(new FoodPreset("Deluxe Chicken Sandwich", 500, R.drawable.chickfilalogo));
