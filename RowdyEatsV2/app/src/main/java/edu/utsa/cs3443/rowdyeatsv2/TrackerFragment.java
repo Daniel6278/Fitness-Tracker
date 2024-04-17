@@ -26,7 +26,6 @@ public class TrackerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tracker, container, false);
-        refreshData();
         return view;
     }
 
@@ -42,6 +41,8 @@ public class TrackerFragment extends Fragment {
                 ((MainActivity)getActivity()).showTrackerDialog();
             }
         });
+        
+        refreshData();
     }
 
     private void refreshData() {
