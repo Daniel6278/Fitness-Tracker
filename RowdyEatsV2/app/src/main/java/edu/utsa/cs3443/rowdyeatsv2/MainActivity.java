@@ -139,16 +139,14 @@ public class MainActivity extends AppCompatActivity
         // set the custom layout
         final View customLayout = getLayoutInflater().inflate(R.layout.dialog_tracker_prompt, null);
         builder.setView(customLayout);
+        EditText food = customLayout.findViewById(R.id.caloriesFood);
+        food.setText(foodInputContents);
+        EditText calories = customLayout.findViewById(R.id.caloriesNumber);
+        calories.setText(caloriesInputContents);
 
         // add a button
         builder.setPositiveButton("Submit", (dialog, which) -> {
-            // send data from the AlertDialog to the Activity
-
-            EditText food = customLayout.findViewById(R.id.caloriesFood);
-            food.setText(foodInputContents);
-            EditText calories = customLayout.findViewById(R.id.caloriesNumber);
-            calories.setText(caloriesInputContents);
-
+            // sends data from the AlertDialog to the Activity
             saveDataTODB(food.getText().toString(),calories.getText().toString());
             r.onRefresh(); // refreshes log display
         });
