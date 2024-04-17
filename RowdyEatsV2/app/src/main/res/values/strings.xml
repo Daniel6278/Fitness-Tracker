@@ -24,5 +24,32 @@
         <li>Serve hot as a main dish or side. The ratatouille is also excellent the next day–cover with foil and reheat in a 350˚F (180˚C) oven for 15 minutes, or simply microwave to desired temperature.</li>
         <li>Enjoy!</li>
     </string>
-    <string name="recipe_pumpkin_mac_n_cheese"></string>
+    <string name="recipe_pumpkin_mac_n_cheese">
+        <p>Source: <a href="https://cookieandkate.com/pumpkin-mac-and-cheese-recipe">cookieandkate.com/pumpkin-mac-and-cheese-recipe</a></p>
+
+        <h1>Ingredients</h1>
+        <li>2 tablespoons unsalted butter</li>
+        <li>1 ½ teaspoons pumpkin spice blend*</li>
+        <li>1 ½ teaspoons garlic powder</li>
+        <li>1 ½ teaspoons onion powder</li>
+        <li>1 can (15 ounces) pumpkin purée (not pumpkin pie filling)</li>
+        <li>1 pound short-cut pasta (pipe regate, macaroni noodles, casarecce, cavatelli, fusilli)</li>
+        <li>5 cups water</li>
+        <li>1 teaspoon fine salt, to taste</li>
+        <li>4 ounces cream cheese, cubed</li>
+        <li>8 ounces shredded sharp cheddar cheese</li>
+        <li>½ cup (2 ounces) finely grated Parmesan cheese, plus more for serving</li>
+
+        <h1>Instructions</h1>
+        <li>Melt the butter in a large pot or Dutch oven over medium heat. Add the pumpkin spice, garlic and onion powders and cook for 2 to 4 minutes, stirring often, until the butter is very fragrant and you see many little brown flecks in the pan. Stir in the pumpkin and let it cook for a minute, while stirring.</li>
+        <li>Pour in the pasta, water and salt. Cover the pot and bring it to a boil over high heat. Once boiling, remove the lid and set the timer for 8 minutes.</li>
+        <li>Cook, stirring often (more often as the time goes on), until the timer goes off. Turn down the heat as necessary to avoid scorching but maintain a steady simmer. When the time goes off, do not drain the water. Stir in the cream cheese. Continue simmering until the cream cheese has melted and the pasta is al dente (careful when you taste, it’s quite hot), about 4 to 5 more minutes.</li>
+        <li>Reduce the heat to low. Add the cheddar and Parmesan, and stir until the mixture is melted and creamy. Remove the pot from the heat.</li>
+        <li>Season with salt, to taste (I usually add ¼ teaspoon or more). Serve the pasta in bowls with extra Parmesan grated on top, if desired. Leftovers keep well, covered and refrigerated, for up to 5 days (or freezes relatively well for up to 3 months).</li>
+
+        <h1>Notes</h1>
+        <p>Recipe adapted from my Butternut Squash Mac and Cheese.</p>
+        <p>*PUMPKIN SPICE AMOUNTS: To make just enough pumpkin spice for this recipe, use ¾  teaspoon ground cinnamon, ½ teaspoon ground ginger, ¼ teaspoon ground nutmeg, and a little pinch of allspice or cloves.</p>
+        <p>MAKE IT GLUTEN FREE: Gluten-free pastas vary widely. Choose a spiral-shaped gluten-free brown rice pasta, such as fusilli, over other pasta types (my tester was pleased with Jovial brand). Stir gently and don’t cook the pasta any longer than necessary or it may start to lose its shape.</p>
+    </string>
 </resources>
