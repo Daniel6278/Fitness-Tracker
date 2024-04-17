@@ -21,12 +21,18 @@ public class MainActivity extends AppCompatActivity
         implements NavigationBarView
         .OnItemSelectedListener {
 
-    BottomNavigationView bottomNavigationView;
+    private DatabaseHandler dba;
+    public DatabaseHandler getDba() {
+        return dba;
+    }
+
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         bottomNavigationView
@@ -35,6 +41,8 @@ public class MainActivity extends AppCompatActivity
         bottomNavigationView
                 .setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.nav_btn_home);
+
+        dba = new DatabaseHandler(this);
     }
     CafeFragment2 cafeFragment = new CafeFragment2();
     CalculatorFragment calculatorFragment = new CalculatorFragment();
@@ -88,8 +96,6 @@ public class MainActivity extends AppCompatActivity
 
     private void saveDataTODB(String mealName, String calories) {
 
-        DatabaseHandler dba = new DatabaseHandler(this);
-
         mealName = mealName.trim();
         calories = calories.trim();
 
@@ -115,7 +121,14 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this, "Meal logged!", Toast.LENGTH_LONG).show();
     }
 
-    public void showDialog(View view) {
+    public void showTrackerDialog() {
+        showTrackerDialog("","");
+    }
+    public void showTrackerDialog(int DBID) {
+        showTrackerDialog();
+    }
+
+    public void showTrackerDialog(String foodInputContents,String caloriesInputContents) {
         // Create an alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Meal Log Entry");
@@ -128,9 +141,10 @@ public class MainActivity extends AppCompatActivity
         builder.setPositiveButton("Submit", (dialog, which) -> {
             // send data from the AlertDialog to the Activity
 
-            EditText food = view.findViewById(R.id.caloriesFood);
-            EditText calories = view.findViewById(R.id.caloriesNumber);
-            Button submit = view.findViewById(R.id.submitButton);
+            EditText food = customLayout.findViewById(R.id.caloriesFood);
+            food.setText(foodInputContents);
+            EditText calories = customLayout.findViewById(R.id.caloriesNumber);
+            calories.setText(caloriesInputContents);
 
             saveDataTODB(food.getText().toString(),calories.getText().toString());
         });

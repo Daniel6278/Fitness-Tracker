@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,6 +36,18 @@ public class CafeSubMenuFragment extends Fragment {
 
         CafeSubMenuFragmentArgs args = CafeSubMenuFragmentArgs.fromBundle(getArguments());
 
+        // sets toolbar text
+        Toolbar subMenuToolbar = view.findViewById(R.id.toolbar);
+        subMenuToolbar.setTitle(args.getHead());
+
+        subMenuToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //What to do on back clicked
+                Navigation.findNavController(view).navigate(R.id.action_cafeSubMenuFragment_to_cafeTopMenuFragment);
+            }
+        });
+
         RecyclerView recyclerView = view.findViewById(R.id.cafeSubRV);
 
         // created new array list..
@@ -40,13 +56,13 @@ public class CafeSubMenuFragment extends Fragment {
         // added data from arraylist to adapter class.
         CafeRecyclerViewAdapter adapter = new CafeRecyclerViewAdapter(recyclerDataArrayList, view.getContext());
 
-        Activity activity = getActivity();
+        MainActivity activity = (MainActivity)getActivity(); // TODO : bad
 
         // onclick
         adapter.setOnClickListener(new CafeRecyclerViewAdapter.OnClickListener() {
             @Override
             public void onAddToLog(int position, FoodPreset model) {
-
+                activity.showTrackerDialog();
             }
 
             @Override

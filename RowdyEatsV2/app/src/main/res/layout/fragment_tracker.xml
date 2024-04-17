@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".DetailFoodActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/icon_add"
+        app:tint="@color/white"
+        android:backgroundTint="@color/orange"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="24dp"/>
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package edu.utsa.cs3443.rowdyeatsv2.data;
+package edu.utsa.cs3443.rowdyeatsv2.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

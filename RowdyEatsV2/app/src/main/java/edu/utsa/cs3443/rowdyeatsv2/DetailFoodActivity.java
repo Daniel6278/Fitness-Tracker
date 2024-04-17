@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
 import edu.utsa.cs3443.rowdyeatsv2.model.FoodRecord;
-import edu.utsa.cs3443.rowdyeatsv2.data.CustomDataAdapter;
+import edu.utsa.cs3443.rowdyeatsv2.adapters.CustomDataAdapter;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class DetailFoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_food);
+        setContentView(R.layout.fragment_tracker);
 
         listView = findViewById(R.id.listView);
 
