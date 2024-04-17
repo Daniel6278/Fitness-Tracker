@@ -99,8 +99,8 @@ public class MainActivity extends AppCompatActivity
 
         mealName = mealName.trim();
         calories = calories.trim();
-        Log.println(Log.INFO,"saveDataTODB:mealName",mealName);
-        Log.println(Log.INFO,"saveDataTODB:calories",calories);
+        //Log.println(Log.INFO,"saveDataTODB:mealName",mealName);
+        //Log.println(Log.INFO,"saveDataTODB:calories",calories);
 
         if (mealName.isEmpty() || calories.isEmpty()) {
             Toast.makeText(this, "Please fill in all of the fields", Toast.LENGTH_LONG).show();
