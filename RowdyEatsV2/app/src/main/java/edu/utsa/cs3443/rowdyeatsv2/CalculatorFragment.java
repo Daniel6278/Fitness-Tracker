@@ -76,9 +76,14 @@ public class CalculatorFragment extends Fragment {
         double weightInKg = weightPounds / 2.20462; // Convert weight from pounds to kilograms
 
         // Calculate Basal Metabolic Rate (BMR) using Mifflin-St Jeor Equation
+        /*
         double bmr = (gender.equalsIgnoreCase("male")) ?
                 (10 * weightInKg + 6.25 * heightInCm - 5 * age + 5) :
                 (10 * weightInKg + 6.25 * heightInCm - 5 * age - 161);
+         */
+        double bmr = (gender.equalsIgnoreCase("male")) ?
+                66 + (13.7 * weightInKg) + (5 * heightInCm) - (6.8 * age) :
+                655 + (9.6 * weightInKg) + (1.8 * heightInCm) - (4.7 * age);
 
         // Adjust BMR based on activity level
         switch (activityLevel.toLowerCase()) {
