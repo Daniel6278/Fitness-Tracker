@@ -185,8 +185,10 @@
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:text="Calculate"
+        android:textStyle="bold"
         style="@style/Widget.AppCompat.Button.Colored"
         app:layout_constraintBottom_toBottomOf="@id/resultText"
         app:layout_constraintEnd_toEndOf="parent"
