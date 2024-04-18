@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#FFFFFF"
-    android:padding="20dp">
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="4dp"
         android:text="Food Name"
-        android:textSize="18dp"
+        android:textAppearance="@style/TextAppearance.RowdyEats.BodyLarge"
         android:textStyle="bold"
-        android:textColor="@color/blue" />
+        android:textColor="@color/blue"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"/>
 
     <TextView
         android:id="@+id/dateText"
@@ -23,9 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="6dp"
         android:text="Date Text"
-        android:textColor="@color/orange_dark" />
+        android:textColor="@color/gray_dark"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/calories"
@@ -34,29 +35,41 @@
         android:layout_below="@+id/dateText"
         android:layout_centerHorizontal="true"
         android:text="Calories"
-        android:textSize="35dp"
+        android:textAppearance="@style/TextAppearance.RowdyEats.DisplayMedium"
         android:textStyle="bold"
-        android:textColor="@color/orange_dark" />
+        android:textColor="@color/orange_dark"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:id="@+id/caloriesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/calories"
-        android:layout_marginLeft="-223dp"
-        android:layout_toRightOf="@id/calories"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
         android:text="Calories Count"
         android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.RowdyEats.BodySmall"
         android:textColor="@color/gray_dark" />
 
-    <TextView
-        android:id="@+id/hasChild"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_edit"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:icon="@drawable/icon_edit"
+        app:iconTint="@color/blue"
         android:layout_alignParentRight="true"
-        android:text=">"
-        />
+        app:iconGravity="end"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_delete"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        app:icon="@drawable/icon_delete"
+        app:iconTint="@color/gray"
+        app:iconGravity="start"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
 </RelativeLayout>

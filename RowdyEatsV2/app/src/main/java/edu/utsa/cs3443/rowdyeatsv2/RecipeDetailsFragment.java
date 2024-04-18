@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.Navigation;
@@ -43,7 +44,7 @@ public class RecipeDetailsFragment extends Fragment {
         ImageView recipeDetailsPagePicture = view.findViewById(R.id.recipePicture);
         recipeDetailsPagePicture.setImageResource(args.getPicture());
         TextView recipeDetailsPageBody = view.findViewById(R.id.recipeBody);
-        recipeDetailsPageBody.setText(args.getBody());
+        recipeDetailsPageBody.setText(HtmlCompat.fromHtml(getString(args.getBody()),0)); // html rich text
 
         recipeDetailsPageToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

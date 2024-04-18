@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             app:toolbarId="@+id/toolbar"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
-
+            android:theme="@style/CustomToolbarTheme"
             app:contentScrim="?attr/colorPrimary">
 
 
@@ -35,7 +35,6 @@
         android:id="@+id/cafeSuperRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="12dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
 
 

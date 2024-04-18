@@ -39,7 +39,7 @@ public class CafeRecyclerViewAdapter extends RecyclerView.Adapter<CafeRecyclerVi
         // Set the data to textview and imageview.
         FoodPreset recyclerData = cafeArrayList.get(position);
         holder.tvName.setText(recyclerData.getFoodName());
-        holder.tvCalories.setText(Integer.toString(recyclerData.getCalories()));
+        holder.tvCalories.setText(Integer.toString(recyclerData.getCalories()) + " cal");
         holder.iv.setImageResource(recyclerData.getImgId());
 
         holder.btnAddToLog.setOnClickListener(view -> {
