@@ -30,7 +30,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textColor="@color/blue"
         android:textAppearance="@style/TextAppearance.RowdyEats.BodySmall"/>
-    />
 
     <LinearLayout
         android:id="@+id/heightInputsGroup"
