@@ -3,104 +3,109 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <TextView
         android:id="@+id/calorieTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calculate Your Daily Calories"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textStyle="bold"
         android:textColor="@color/orange_dark"
-        android:textSize="22dp"/>
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"/>
 
     <TextView
         android:id="@+id/heightSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter Height:"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/calorieTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/blue" />
+        android:textColor="@color/blue"
+        android:textAppearance="@style/TextAppearance.RowdyEats.BodySmall"/>
+    />
 
-    <EditText
-        android:id="@+id/feetInput"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="10dp"
-        android:hint="Feet"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
-        app:layout_constraintWidth_percent="0.5" />
-
-    <EditText
-        android:id="@+id/inchesInput"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="10dp"
-        android:hint="Inches"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
-        app:layout_constraintWidth_percent="0.5" />
-
-    <TextView
-        android:id="@+id/weightSelect"
+    <LinearLayout
+        android:id="@+id/heightInputsGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="60dp"
-        android:text="Enter Weight:"
-        android:textColor="@color/blue"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heightSelect">
+        <EditText
+            android:id="@+id/feetInput"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:hint="Feet"
+            android:inputType="number"/>
 
-    <EditText
-        android:id="@+id/weightInput"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="80dp"
-        android:hint="Weight (in pounds)"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
-        app:layout_constraintWidth_percent="0.5" />
+        <EditText
+            android:id="@+id/inchesInput"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:hint="Inches"
+            android:inputType="number"/>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/ageSelect"
+    <LinearLayout
+        android:id="@+id/ageWeightInputsGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Enter Age:"
-        android:textColor="@color/blue"
-        app:layout_constraintEnd_toEndOf="@+id/heightSelect"
-        app:layout_constraintHorizontal_bias="0.697"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
-        app:layout_constraintWidth_percent="0.5" />
-
-    <EditText
-        android:id="@+id/ageInput"
-        android:layout_width="213dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="80dp"
-        android:hint="Age"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heightInputsGroup">
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp">
+            <TextView
+                android:id="@+id/ageSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Age:"
+                android:textColor="@color/blue"
+                android:textAppearance="@style/TextAppearance.RowdyEats.BodySmall"/>
+            <EditText
+                android:id="@+id/ageInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Age"
+                android:inputType="number"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+            <TextView
+                android:id="@+id/weightSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Weight:"
+                android:textColor="@color/blue"
+                android:textAppearance="@style/TextAppearance.RowdyEats.BodySmall"/>
+            <EditText
+                android:id="@+id/weightInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Weight (in pounds)"
+                android:inputType="number"/>
+        </LinearLayout>
+    </LinearLayout>
 
     <RadioGroup
         android:id="@+id/genderGroup"
@@ -149,14 +154,14 @@
             android:id="@+id/lightlyActiveButton"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
-            android:text="Active 1-3 Times a Week"
+            android:text="Active 1–3 Times a Week"
             android:textColor="@color/gray_dark" />
 
         <RadioButton
             android:id="@+id/moderatelyActiveButton"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
-            android:text="Active 3-5 Times a Week"
+            android:text="Active 3–5 Times a Week"
             android:textColor="@color/gray_dark" />
 
         <RadioButton
@@ -181,11 +186,10 @@
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="36dp"
         android:text="Calculate"
-        android:textColor="@color/blue"
-        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.AppCompat.Button.Colored"
+        app:layout_constraintBottom_toBottomOf="@id/resultText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -193,12 +197,12 @@
         android:id="@+id/resultText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textSize="18sp"
+        android:layout_marginBottom="24dp"
+        android:textAppearance="@style/TextAppearance.RowdyEats.BodyLarge"
         android:textStyle="bold"
         android:gravity="center"
         android:text="Result will show here"
-        app:layout_constraintTop_toBottomOf="@id/calculateButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -206,25 +210,29 @@
         android:id="@+id/activitySelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="20dp"
         android:text="Select Activity Level:"
         android:textColor="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderGroup"
+        app:layout_constraintWidth_percent="0.5"
+        android:textAppearance="@style/TextAppearance.RowdyEats.BodySmall"/>
+
 
     <TextView
         android:id="@+id/genderSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="20dp"
         android:text="Select Gender:"
         android:textColor="@color/blue"
-        app:layout_constraintEnd_toEndOf="@+id/heightSelect"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightSelect"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/ageWeightInputsGroup"
+        app:layout_constraintWidth_percent="0.5"
+        android:textAppearance="@style/TextAppearance.RowdyEats.BodySmall"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
