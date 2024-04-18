@@ -121,7 +121,8 @@
             android:layout_height="wrap_content"
             android:text="Male"
             android:layout_marginEnd="16dp"
-            android:textColor="@color/gray_dark" />
+            android:textColor="@color/gray_dark"
+            android:buttonTint="@color/radio_inactive_active" />
 
         <RadioButton
             android:id="@+id/femaleButton"
@@ -129,7 +130,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:text="Female"
-            android:textColor="@color/gray_dark" />
+            android:textColor="@color/gray_dark"
+            android:buttonTint="@color/radio_inactive_active" />
     </RadioGroup>
 
     <!-- Activity Level RadioGroup -->
@@ -147,35 +149,40 @@
             android:layout_width="224dp"
             android:layout_height="wrap_content"
             android:text="Little or No Exercise"
-            android:textColor="@color/gray_dark" />
+            android:textColor="@color/gray_dark"
+            android:buttonTint="@color/radio_inactive_active" />
 
         <RadioButton
             android:id="@+id/lightlyActiveButton"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
             android:text="Active 1–3 Times a Week"
-            android:textColor="@color/gray_dark" />
+            android:textColor="@color/gray_dark"
+            android:buttonTint="@color/radio_inactive_active" />
 
         <RadioButton
             android:id="@+id/moderatelyActiveButton"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
             android:text="Active 3–5 Times a Week"
-            android:textColor="@color/gray_dark" />
+            android:textColor="@color/gray_dark"
+            android:buttonTint="@color/radio_inactive_active" />
 
         <RadioButton
             android:id="@+id/veryActiveButton"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
             android:text="Active Every Day"
-            android:textColor="@color/gray_dark" />
+            android:textColor="@color/gray_dark"
+            android:buttonTint="@color/radio_inactive_active" />
 
         <RadioButton
             android:id="@+id/extraActiveButton"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
             android:text="Active Multiple Times a Day"
-            android:textColor="@color/gray_dark" />
+            android:textColor="@color/gray_dark"
+            android:buttonTint="@color/radio_inactive_active" />
 
 
         <!-- Add other RadioButton views for each activity level as shown above -->

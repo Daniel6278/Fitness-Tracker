@@ -68,7 +68,7 @@
         android:layout_height="48dp"
         android:layout_alignParentLeft="true"
         app:icon="@drawable/icon_delete"
-        app:iconTint="@color/gray_dark"
+        app:iconTint="@color/gray"
         app:iconGravity="start"
         style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
