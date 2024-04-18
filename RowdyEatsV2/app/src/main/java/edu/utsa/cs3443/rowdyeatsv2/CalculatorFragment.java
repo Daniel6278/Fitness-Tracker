@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 public class CalculatorFragment extends Fragment {
-
+//add view model so other fragments can see
     private EditText feetInput, inchesInput, weightInput, ageInput;
     private RadioGroup genderGroup, activityLevelGroup;
     private Button calculateButton;
