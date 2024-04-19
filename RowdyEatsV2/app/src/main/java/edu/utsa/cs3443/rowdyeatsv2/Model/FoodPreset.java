@@ -7,6 +7,7 @@ import edu.utsa.cs3443.rowdyeatsv2.R;
 public class FoodPreset {
 
     private String foodName;
+    private String nutrition;
     private int calories;
 
     private int imgId;
@@ -18,7 +19,7 @@ public class FoodPreset {
             // add data to array list
             // TODO : make this stuff not hardcoded
             case "Chick-fil-A":
-                list.add(new FoodPreset("Chicken Sandwich", 450, R.drawable.chickfilalogo));
+                list.add(new FoodPreset("Chicken Sandwich", 450, R.drawable.chickfilalogo, "Fat: 20g\nCarbs: 50g\nProtein: 90g"));
                 list.add(new FoodPreset("Spicy Chicken Sandwich", 450, R.drawable.chickfilalogo));
                 list.add(new FoodPreset("Deluxe Chicken Sandwich", 500, R.drawable.chickfilalogo));
                 list.add(new FoodPreset("Spicy Deluxe Chicken Sandwich", 500, R.drawable.chickfilalogo));
@@ -40,6 +41,13 @@ public class FoodPreset {
         this.foodName = foodName;
         this.calories = calories;
         this.imgId = imgId;
+    }
+
+    public FoodPreset(String foodName, int calories, int imgId, String nutrition) {
+        this.foodName = foodName;
+        this.calories = calories;
+        this.imgId = imgId;
+        this.nutrition = nutrition;
     }
 
     public String getFoodName() {
@@ -64,5 +72,11 @@ public class FoodPreset {
 
     public void setImgId(int imgId) {
         this.imgId = imgId;
+    }
+
+    public String getNutritionId() { return hasNutritionBreakdown() ? this.nutrition : "No Nutrition Facts"; }
+
+    public boolean hasNutritionBreakdown() {
+        return this.nutrition != null;
     }
 }

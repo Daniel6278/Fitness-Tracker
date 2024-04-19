@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +15,8 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
 
@@ -53,6 +56,16 @@ public class CafeSubMenuFragment extends Fragment {
         // added data from arraylist to adapter class.
         CafeRecyclerViewAdapter adapter = new CafeRecyclerViewAdapter(recyclerDataArrayList, view.getContext());
 
+        // nutrition facts
+        View bottomSheet = view.findViewById(R.id.bottom_sheet_nutrition);
+        BottomSheetBehavior sheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        bottomSheet.findViewById(R.id.btn_close_sheet).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+            }
+        });
+
         MainActivity activity = (MainActivity)getActivity(); // TODO : bad
 
         // onclick
@@ -69,7 +82,11 @@ public class CafeSubMenuFragment extends Fragment {
 
             @Override
             public void onOpenNutritionFacts(int position, FoodPreset model) {
-
+                TextView bottomSheetTitle = bottomSheet.findViewById(R.id.food_name_head);
+                bottomSheetTitle.setText(model.getFoodName());
+                TextView bottomSheetBody = bottomSheet.findViewById(R.id.nutrition_body);
+                bottomSheetBody.setText(model.getNutritionId());
+                sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
             }
 
         });

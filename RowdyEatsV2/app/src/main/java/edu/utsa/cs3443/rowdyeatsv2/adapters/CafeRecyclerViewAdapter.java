@@ -42,9 +42,19 @@ public class CafeRecyclerViewAdapter extends RecyclerView.Adapter<CafeRecyclerVi
         holder.tvCalories.setText(Integer.toString(recyclerData.getCalories()) + " cal");
         holder.iv.setImageResource(recyclerData.getImgId());
 
+        if (!recyclerData.hasNutritionBreakdown()) {
+            // hides nutrition info button if there’s no nutrition info
+            holder.btnShowNutrition.setVisibility(View.GONE);
+        }
+
         holder.btnAddToLog.setOnClickListener(view -> {
             if (onClickListener != null) {
                 onClickListener.onAddToLog(position, cafeArrayList.get(position));
+            }
+        });
+        holder.btnShowNutrition.setOnClickListener(view -> {
+            if (onClickListener != null) {
+                onClickListener.onOpenNutritionFacts(position, cafeArrayList.get(position));
             }
         });
     }
@@ -71,6 +81,7 @@ public class CafeRecyclerViewAdapter extends RecyclerView.Adapter<CafeRecyclerVi
         private ImageView iv;
 
         private Button btnAddToLog;
+        private Button btnShowNutrition;
 
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -79,6 +90,7 @@ public class CafeRecyclerViewAdapter extends RecyclerView.Adapter<CafeRecyclerVi
             iv = itemView.findViewById(R.id.food_preset_image);
 
             btnAddToLog = itemView.findViewById(R.id.btn_add_to_log);
+            btnShowNutrition = itemView.findViewById(R.id.btn_show_info);
         }
     }
 }

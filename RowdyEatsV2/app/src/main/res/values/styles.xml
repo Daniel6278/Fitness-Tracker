@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base application theme. -->
+    <!-- Base application theme -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <item name="android:statusBarColor">
@@ -32,6 +32,9 @@
         <item name="textAppearanceHeadlineLarge">@style/TextAppearance.RowdyEats.H1</item>
         <item name="textAppearanceHeadlineMedium">@style/TextAppearance.RowdyEats.H2</item>
         <item name="textAppearanceHeadlineSmall">@style/TextAppearance.RowdyEats.H3</item>
+
+        <!-- Bottom Sheet -->
+        <item name="bottomSheetDragHandleStyle">@style/Widget.MaterialComponents.BottomSheet.DragHandle</item>
 
     </style>
 
@@ -89,6 +92,7 @@
         <item name="lineHeight">@null</item>
     </style>
 
+    <!-- Toolbar -->
     <style name="CustomToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="android:colorForeground">@color/white</item>
         <item name="android:iconTint">@color/white</item>
@@ -100,4 +104,10 @@
         <item name="tint">@color/white</item>
     </style>
 
+    <!-- Bottom Sheet -->
+    <style name="Widget.MaterialComponents.BottomSheet.DragHandle" parent="Widget.Material3.BottomSheet.DragHandle">
+        <item name="tint">?colorOnSurface</item>
+        <!--Alpha can be added optionally to achieve nice color blend-->
+        <item name="android:alpha">0.3</item>
+    </style>
 </resources>

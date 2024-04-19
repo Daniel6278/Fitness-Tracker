@@ -10,6 +10,8 @@
     <string name="Calories">Calories</string>
     <string name="submit_button">Submit</string>
 
+    <string name="nutritionPlaceholder">Nutrition details are unavailable for this food item.</string>
+
     <!--Recipes-->
     <string name="recipe_sushi">lorem ipsum sushi</string>
     <string name="recipe_bkfst_sandwich">lorem ipsum burger</string>
