@@ -6,6 +6,10 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/gray_light"
+    android:backgroundTint="@color/gray_light"
+    android:foregroundTint="@color/gray_light"
+    app:background="@color/gray_light"
+    app:backgroundTint="@color/gray_light"
     android:layout_gravity="bottom"
     >
 
@@ -27,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
-            android:text="McDonald’s Cheeseburger"
+            android:text="Nutrition Facts"
             android:textAppearance="@style/TextAppearance.RowdyEats.H2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
-            android:text="Fat: 0g\nProtein: 0g\nCarbs: 0g"
-            android:textAppearance="@style/TextAppearance.RowdyEats.BodyMedium"></TextView>
+            android:text="Tap a food item’s nutrition info button (if it has one) to view its nutrition details."
+            android:textAppearance="@style/TextAppearance.RowdyEats.BodyLarge"></TextView>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>
