@@ -6,9 +6,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/gray_light"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     android:layout_gravity="bottom"
-    android:id="@+id/bottom_sheet_nutrition">
+    >
 
     <com.google.android.material.bottomsheet.BottomSheetDragHandleView
         android:layout_width="match_parent"

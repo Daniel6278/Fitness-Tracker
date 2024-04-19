@@ -30,5 +30,11 @@
 
 </LinearLayout>
 
-    <include layout="@layout/sheet_nutrition"/>
+    <include
+        layout="@layout/sheet_nutrition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:id="@+id/bottom_sheet_nutrition"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
