@@ -140,7 +140,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void showTrackerDialog(TrackerFragment.RefreshListener r,FoodRecord foodRecordToEditOrCreate) {
-        final boolean isCreating = foodRecordToEditOrCreate == null || foodRecordToEditOrCreate.getRecordDate() == null;
+        final boolean noFieldsPreFill = foodRecordToEditOrCreate == null;
+        final boolean isCreating = noFieldsPreFill || foodRecordToEditOrCreate.getRecordDate() == null;
         // Create an alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(isCreating ? "Create Meal Log Entry" : "Edit Meal Log Entry");
@@ -152,11 +153,13 @@ public class MainActivity extends AppCompatActivity
         EditText calories = customLayout.findViewById(R.id.caloriesNumber);
         TextView editingMsg = customLayout.findViewById(R.id.is_edit_note);
         if (!isCreating) {
-            food.setText(foodRecordToEditOrCreate.getFoodName());
-            calories.setText(Integer.toString(foodRecordToEditOrCreate.getCalories()));
             editingMsg.setText(String.format("You are editing an existing meal log entry from %s.", foodRecordToEditOrCreate.getRecordDateStr()));
         } else {
             editingMsg.setVisibility(View.GONE);
+        }
+        if (!noFieldsPreFill) {
+            food.setText(foodRecordToEditOrCreate.getFoodName());
+            calories.setText(Integer.toString(foodRecordToEditOrCreate.getCalories()));
         }
 
         // add a button
