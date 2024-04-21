@@ -56,21 +56,7 @@ public class TrackerFragment extends Fragment {
         foodAdapter.clear();
         foodAdapter.addAll(foodArrayList);
         //foodAdapter.notifyDataSetChanged();
-
-        listView.setOnItemClickListener((parent, view, position, id) -> {
-            Log.d("refreshData","item click listener");
-            FoodRecord f = foodArrayList.get(position);
-            switch (id) {
-                case R.id.btn_delete:
-                    // deletes a logged meal
-                    ((MainActivity)getActivity()).deleteFoodRecord(f);
-                    refreshData();
-                    break;
-                case R.id.btn_edit:
-                    // beams a logged meal’s model to the dialog for user edit
-                    ((MainActivity)getActivity()).showTrackerDialog(refreshListener,f);
-                    break;
-            }
-        });
+        foodAdapter.setOnDeleteClickListener((position, model) -> ((MainActivity)getActivity()).deleteFoodRecord(model));
+        foodAdapter.setOnEditClickListener((position, model) -> ((MainActivity)getActivity()).showTrackerDialog(refreshListener,model));
     }
 }
