@@ -27,6 +27,7 @@ public class TrackerFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        foodArrayList = new ArrayList<>();
         refreshListener = new RefreshListener() {
             @Override
             public void onRefresh() {
@@ -43,6 +44,7 @@ public class TrackerFragment extends Fragment {
         listView = view.findViewById(R.id.listView);
         foodAdapter = new CustomDataAdapter(getActivity(), R.layout.list_row_recorded_food, foodArrayList);
         listView.setAdapter(foodAdapter);
+        foodAdapter.setNotifyOnChange(true); // changes to the ArrayList refresh the adapter
 
         FloatingActionButton fab = view.findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,8 +63,9 @@ public class TrackerFragment extends Fragment {
 
     private void refreshData() {
         foodArrayList = ((MainActivity)getActivity()).getDba().getAllFood();
-        foodAdapter.setNotifyOnChange(true); // changes to the ArrayList refresh the adapter
-        foodAdapter.notifyDataSetChanged();
+        foodAdapter.clear();
+        foodAdapter.addAll(foodArrayList);
+        //foodAdapter.notifyDataSetChanged();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
