@@ -52,8 +52,6 @@ public class CustomDataAdapter extends ArrayAdapter<FoodRecord> {
         View row = convertView;
         ViewHolder holder;
 
-        @NotNull FoodRecord food = getItem(position);
-
         if (row == null) {
             LayoutInflater inflater = LayoutInflater.from(activity);
             row = inflater.inflate(layoutResource, parent, false);
@@ -64,12 +62,14 @@ public class CustomDataAdapter extends ArrayAdapter<FoodRecord> {
 
             row.findViewById(R.id.btn_delete).setOnClickListener(v -> {
                 if (onDeleteClickListener != null) {
-                    onDeleteClickListener.onClick(position,food);
+                    onDeleteClickListener.onClick(position,getItem(position));
+                    // do not use the food variable here. must call getItem to get the latest model object after edit
                 }
             });
             row.findViewById(R.id.btn_edit).setOnClickListener(v -> {
                 if (onEditClickListener != null) {
-                    onEditClickListener.onClick(position,food);
+                    onEditClickListener.onClick(position,getItem(position));
+                    // do not use the food variable here. must call getItem to get the latest model object after edit
                 }
             });
 
@@ -78,6 +78,7 @@ public class CustomDataAdapter extends ArrayAdapter<FoodRecord> {
             holder = (ViewHolder) row.getTag();
         }
 
+        @NotNull FoodRecord food = getItem(position);
         holder.foodName.setText(food.getFoodName());
         holder.foodCalories.setText(String.format("%d cal", food.getCalories()));
         holder.foodDate.setText(food.getRecordDateStr());
