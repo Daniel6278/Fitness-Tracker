@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity
         TextView editingMsg = customLayout.findViewById(R.id.is_edit_note);
         if (!isCreating) {
             food.setText(foodRecordToEditOrCreate.getFoodName());
-            calories.setText(foodRecordToEditOrCreate.getCalories());
+            calories.setText(Integer.toString(foodRecordToEditOrCreate.getCalories()));
             editingMsg.setText(String.format("You are editing an existing meal log entry from %s.", foodRecordToEditOrCreate.getRecordDateStr()));
         } else {
             editingMsg.setVisibility(View.GONE);

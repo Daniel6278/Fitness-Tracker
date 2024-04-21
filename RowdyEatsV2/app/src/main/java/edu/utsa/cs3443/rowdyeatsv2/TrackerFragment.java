@@ -40,7 +40,10 @@ public class TrackerFragment extends Fragment {
 
         listView = view.findViewById(R.id.listView);
         listView.setAdapter(foodAdapter);
-        foodAdapter.setOnDeleteClickListener((position, model) -> ((MainActivity)getActivity()).deleteFoodRecord(model));
+        foodAdapter.setOnDeleteClickListener((position, model) -> {
+            ((MainActivity) getActivity()).deleteFoodRecord(model);
+            refreshData();
+        });
         foodAdapter.setOnEditClickListener((position, model) -> ((MainActivity)getActivity()).showTrackerDialog(refreshListener,model));
 
         FloatingActionButton fab = view.findViewById(R.id.floatingActionButton);
