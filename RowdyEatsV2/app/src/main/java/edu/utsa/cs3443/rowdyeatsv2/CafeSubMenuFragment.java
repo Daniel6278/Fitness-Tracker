@@ -20,6 +20,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
 
+import edu.utsa.cs3443.rowdyeatsv2.Model.FoodRecord;
 import edu.utsa.cs3443.rowdyeatsv2.adapters.CafeRecyclerViewAdapter;
 import edu.utsa.cs3443.rowdyeatsv2.Model.FoodPreset;
 
@@ -77,7 +78,7 @@ public class CafeSubMenuFragment extends Fragment {
                     public void onRefresh() {
                         // do nothing
                     }
-                },model.getFoodName(),Integer.toString(model.getCalories()));
+                },new FoodRecord(model.getFoodName(),model.getCalories()));
             }
 
             @Override

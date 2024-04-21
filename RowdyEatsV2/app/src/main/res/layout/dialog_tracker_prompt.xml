@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.RowdyEats.BodySmall"
             android:textAlignment="center"
-            android:text="You are editing an existing meal log entry from."></TextView>
+            android:text=""></TextView>
 
         <EditText
             android:id="@+id/caloriesFood"

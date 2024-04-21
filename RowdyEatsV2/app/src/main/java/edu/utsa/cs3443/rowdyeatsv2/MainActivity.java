@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import edu.utsa.cs3443.rowdyeatsv2.data.DatabaseHandler;
@@ -149,9 +150,13 @@ public class MainActivity extends AppCompatActivity
         builder.setView(customLayout);
         EditText food = customLayout.findViewById(R.id.caloriesFood);
         EditText calories = customLayout.findViewById(R.id.caloriesNumber);
+        TextView editingMsg = customLayout.findViewById(R.id.is_edit_note);
         if (!isCreating) {
             food.setText(foodRecordToEditOrCreate.getFoodName());
             calories.setText(foodRecordToEditOrCreate.getCalories());
+            editingMsg.setText(String.format("You are editing an existing meal log entry from %s.", foodRecordToEditOrCreate.getRecordDateStr()));
+        } else {
+            editingMsg.setVisibility(View.GONE);
         }
 
         // add a button
