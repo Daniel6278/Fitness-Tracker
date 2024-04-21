@@ -1,10 +1,11 @@
 package edu.utsa.cs3443.rowdyeatsv2.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.R;
 
-public class Restaurant {
+public class Restaurant implements Serializable {
 
     public static ArrayList<Restaurant> getModels() {
         ArrayList<Restaurant> list = new ArrayList<>();

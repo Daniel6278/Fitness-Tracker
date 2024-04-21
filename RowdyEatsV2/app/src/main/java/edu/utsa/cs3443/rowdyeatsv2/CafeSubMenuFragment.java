@@ -85,7 +85,7 @@ public class CafeSubMenuFragment extends Fragment {
                 TextView bottomSheetTitle = bottomSheet.findViewById(R.id.food_name_head);
                 bottomSheetTitle.setText(model.getFoodName());
                 TextView bottomSheetBody = bottomSheet.findViewById(R.id.nutrition_body);
-                bottomSheetBody.setText(model.getNutritionId());
+                bottomSheetBody.setText(model.getNutritionText());
                 sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
             }
 

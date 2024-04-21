@@ -1,20 +1,26 @@
 package edu.utsa.cs3443.rowdyeatsv2.Model;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.util.Date;
 
 public class FoodRecord implements Serializable {
 
-    private String foodName, recordDate;
-    private int calories, foodId;
+    private String foodName;
+    private Date recordDate;
+    private int calories, dbKey;
     private static final long serialVersionUID = 10L;
-
-
-    public FoodRecord() {
-    }
 
     public FoodRecord(String foodName, int calories) {
         this.foodName = foodName;
         this.calories = calories;
+    }
+
+    public FoodRecord(String foodName, int calories, int dbKey, Date recordDate) {
+        this.foodName = foodName;
+        this.calories = calories;
+        this.dbKey = dbKey;
+        this.recordDate = recordDate;
     }
 
     public String getFoodName() {
@@ -25,12 +31,12 @@ public class FoodRecord implements Serializable {
         this.foodName = foodName;
     }
 
-    public String getRecordDate() {
+    public Date getRecordDate() {
         return recordDate;
     }
-
-    public void setRecordDate(String recordDate) {
-        this.recordDate = recordDate;
+    public String getRecordDateStr() {
+        DateFormat dateFormat = DateFormat.getDateInstance();
+        return dateFormat.format(getRecordDate());
     }
 
     public int getCalories() {
@@ -41,12 +47,11 @@ public class FoodRecord implements Serializable {
         this.calories = calories;
     }
 
-    public int getFoodId() {
-        return foodId;
+    public int getDbKey() {
+        return dbKey;
     }
-
-    public void setFoodId(int foodId) {
-        this.foodId = foodId;
+    public void setDbKey(int newKey) {
+        dbKey = newKey;
     }
 
     public static long getSerialVersionID() {

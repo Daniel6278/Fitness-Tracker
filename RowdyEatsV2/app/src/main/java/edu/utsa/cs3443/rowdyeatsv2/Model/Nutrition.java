@@ -2,7 +2,9 @@ package edu.utsa.cs3443.rowdyeatsv2.Model;
 
 import androidx.annotation.NonNull;
 
-public class Nutrition {
+import java.io.Serializable;
+
+public class Nutrition implements Serializable {
     private final double calories;
     private final double fat;
     private final double carbs;

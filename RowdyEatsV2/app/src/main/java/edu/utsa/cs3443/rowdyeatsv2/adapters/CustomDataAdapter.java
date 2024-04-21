@@ -64,7 +64,7 @@ public class CustomDataAdapter extends ArrayAdapter<FoodRecord> {
         if (food != null) {
             holder.foodName.setText(food.getFoodName());
             holder.foodCalories.setText(String.format("%d cal", food.getCalories()));
-            holder.foodDate.setText(food.getRecordDate());
+            holder.foodDate.setText(food.getRecordDateStr());
         }
 
         return row;

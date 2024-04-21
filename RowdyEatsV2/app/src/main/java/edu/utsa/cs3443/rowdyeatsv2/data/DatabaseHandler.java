@@ -53,6 +53,26 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         dba.close();
     }
 
+    public void updateFood(FoodRecord food) {
+        SQLiteDatabase dba = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Constants.FOOD_NAME, food.getFoodName());
+        values.put(Constants.CALORIES, food.getCalories());
+
+        dba.update(Constants.TABLE_NAME, values, Constants.KEY_ID + " = ?",new String[]{Integer.toString(food.getDbKey())});
+
+        Log.d("Updated Food Item", "YES");
+
+        dba.close();
+    }
+
+    public void deleteFood(FoodRecord food) {
+        SQLiteDatabase dba = this.getWritableDatabase();
+        dba.delete(Constants.TABLE_NAME,Constants.KEY_ID + " = ?", new String[]{Integer.toString(food.getDbKey())});
+        Log.d("Deleted Food Item", "YES");
+        dba.close();
+    }
+
     public ArrayList<FoodRecord> getAllFood() {
         foodList.clear();
         SQLiteDatabase dba = this.getReadableDatabase();
@@ -62,22 +82,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                FoodRecord food = new FoodRecord();
 
                 int foodNameIndex = cursor.getColumnIndex(Constants.FOOD_NAME);
                 int caloriesIndex = cursor.getColumnIndex(Constants.CALORIES);
                 int idIndex = cursor.getColumnIndex(Constants.KEY_ID);
                 int dateAddedIndex = cursor.getColumnIndex(Constants.DATE_ADDED);
 
+                FoodRecord food;
+
                 // Check if any of the column indices are -1
                 if (foodNameIndex != -1 && caloriesIndex != -1 && idIndex != -1 && dateAddedIndex != -1) {
-                    food.setFoodName(cursor.getString(foodNameIndex));
-                    food.setCalories(cursor.getInt(caloriesIndex));
-                    food.setFoodId(cursor.getInt(idIndex));
-
-                    DateFormat dateFormat = DateFormat.getDateInstance();
-                    String date = dateFormat.format(new Date(cursor.getLong(dateAddedIndex)).getTime());
-                    food.setRecordDate(date);
+                    food = new FoodRecord(cursor.getString(foodNameIndex),cursor.getInt(caloriesIndex),cursor.getInt(idIndex),new Date(cursor.getLong(dateAddedIndex)));
 
                     foodList.add(food);
                 } else {

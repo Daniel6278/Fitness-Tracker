@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
 
         dba = new DatabaseHandler(this);
     }
-    CafeFragment2 cafeFragment = new CafeFragment2();
+    CafeFragment cafeFragment = new CafeFragment();
     CalculatorFragment calculatorFragment = new CalculatorFragment();
     HomeFragment homeFragment = new HomeFragment();
     RecipesFragment recipesFragment = new RecipesFragment();
@@ -94,6 +94,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void saveDataTODB(String mealName, String calories) {
+        saveDataTODB(mealName,calories,null);
+    }
+
+    private void saveDataTODB(String mealName, String calories, Integer dbKey) {
 
         mealName = mealName.trim();
         calories = calories.trim();
@@ -113,39 +117,53 @@ public class MainActivity extends AppCompatActivity
             return;
         }
 
-        FoodRecord newFood = new FoodRecord();
-        newFood.setFoodName(mealName);
-        newFood.setCalories(nCalories);
+        FoodRecord newFood = new FoodRecord(mealName,nCalories);
 
-        dba.addFood(newFood);
+        if (dbKey == null) {
+            dba.addFood(newFood);
+        } else {
+            newFood.setDbKey(dbKey);
+            dba.updateFood(newFood);
+        }
 
         Toast.makeText(this, "Meal logged!", Toast.LENGTH_LONG).show();
     }
 
-    public void showTrackerDialog(TrackerFragment.RefreshListener r) {
-        showTrackerDialog(r,"","");
-    }
-    public void showTrackerDialog(TrackerFragment.RefreshListener r,int DBID) {
-        showTrackerDialog(r);
+    public void deleteFoodRecord(FoodRecord f) {
+        dba.deleteFood(f);
+        Toast.makeText(this, "Meal deleted.", Toast.LENGTH_LONG).show();
     }
 
-    public void showTrackerDialog(TrackerFragment.RefreshListener r,String foodInputContents,String caloriesInputContents) {
+    public void showTrackerDialog(TrackerFragment.RefreshListener r) {
+        showTrackerDialog(r,null);
+    }
+
+    public void showTrackerDialog(TrackerFragment.RefreshListener r,FoodRecord foodRecordToEditOrCreate) {
+        final boolean isCreating = foodRecordToEditOrCreate == null || foodRecordToEditOrCreate.getRecordDate() == null;
         // Create an alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Meal Log Entry");
+        builder.setTitle(isCreating ? "Create Meal Log Entry" : "Edit Meal Log Entry");
 
         // set the custom layout
         final View customLayout = getLayoutInflater().inflate(R.layout.dialog_tracker_prompt, null);
         builder.setView(customLayout);
         EditText food = customLayout.findViewById(R.id.caloriesFood);
-        food.setText(foodInputContents);
         EditText calories = customLayout.findViewById(R.id.caloriesNumber);
-        calories.setText(caloriesInputContents);
+        if (!isCreating) {
+            food.setText(foodRecordToEditOrCreate.getFoodName());
+            calories.setText(foodRecordToEditOrCreate.getCalories());
+        }
 
         // add a button
         builder.setPositiveButton("Submit", (dialog, which) -> {
+            String mealTitleBoxContents = food.getText().toString();
+            String caloriesBoxContents = calories.getText().toString();
             // sends data from the AlertDialog to the Activity
-            saveDataTODB(food.getText().toString(),calories.getText().toString());
+            if (isCreating) {
+                saveDataTODB(mealTitleBoxContents,caloriesBoxContents);
+            } else {
+                saveDataTODB(mealTitleBoxContents,caloriesBoxContents,foodRecordToEditOrCreate.getDbKey());
+            }
             r.onRefresh(); // refreshes log display
         });
         builder.setNegativeButton("Cancel", (dialog, which) -> {

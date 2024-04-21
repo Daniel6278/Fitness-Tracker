@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -22,28 +23,32 @@ public class TrackerFragment extends Fragment {
     private ListView listView;
     private CustomDataAdapter foodAdapter;
     private ArrayList<FoodRecord> foodArrayList;
+    private RefreshListener refreshListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tracker, container, false);
-        return view;
+        refreshListener = new RefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshData();
+            }
+        };
+        return inflater.inflate(R.layout.fragment_tracker, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         listView = view.findViewById(R.id.listView);
+        foodAdapter = new CustomDataAdapter(getActivity(), R.layout.list_row_recorded_food, foodArrayList);
+        listView.setAdapter(foodAdapter);
 
         FloatingActionButton fab = view.findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).showTrackerDialog(new RefreshListener() {
-                    @Override
-                    public void onRefresh() {
-                        refreshData();
-                    }
-                });
+                ((MainActivity)getActivity()).showTrackerDialog(refreshListener);
             }
         });
 
@@ -56,7 +61,22 @@ public class TrackerFragment extends Fragment {
 
     private void refreshData() {
         foodArrayList = ((MainActivity)getActivity()).getDba().getAllFood();
-        foodAdapter = new CustomDataAdapter(getActivity(), R.layout.list_row_recorded_food, foodArrayList);
-        listView.setAdapter(foodAdapter);
+        foodAdapter.setNotifyOnChange(true); // changes to the ArrayList refresh the adapter
+        foodAdapter.notifyDataSetChanged();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                FoodRecord f = foodArrayList.get(position);
+                if (id == R.id.btn_delete) {
+                    // deletes a logged meal
+                    ((MainActivity)getActivity()).deleteFoodRecord(f);
+                    refreshData();
+                }
+                else if (id == R.id.btn_edit) {
+                    // beams a logged meal’s model to the dialog for user edit
+                    ((MainActivity)getActivity()).showTrackerDialog(refreshListener,f);
+                }
+            }
+        });
     }
 }
