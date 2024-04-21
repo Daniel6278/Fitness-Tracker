@@ -1,6 +1,7 @@
 package edu.utsa.cs3443.rowdyeatsv2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,7 @@ public class TrackerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         foodArrayList = new ArrayList<>();
         foodAdapter = new CustomDataAdapter(getActivity(), R.layout.list_row_recorded_food, foodArrayList);
-        foodAdapter.setNotifyOnChange(true); // changes to the ArrayList refresh the adapter
+        foodAdapter.setNotifyOnChange(true); // changes to foodAdapter’s data refresh the UI
         refreshListener = this::refreshData;
         return inflater.inflate(R.layout.fragment_tracker, container, false);
     }
@@ -55,16 +56,20 @@ public class TrackerFragment extends Fragment {
         foodAdapter.clear();
         foodAdapter.addAll(foodArrayList);
         //foodAdapter.notifyDataSetChanged();
+
         listView.setOnItemClickListener((parent, view, position, id) -> {
+            Log.d("refreshData","item click listener");
             FoodRecord f = foodArrayList.get(position);
-            if (id == R.id.btn_delete) {
-                // deletes a logged meal
-                ((MainActivity)getActivity()).deleteFoodRecord(f);
-                refreshData();
-            }
-            else if (id == R.id.btn_edit) {
-                // beams a logged meal’s model to the dialog for user edit
-                ((MainActivity)getActivity()).showTrackerDialog(refreshListener,f);
+            switch (id) {
+                case R.id.btn_delete:
+                    // deletes a logged meal
+                    ((MainActivity)getActivity()).deleteFoodRecord(f);
+                    refreshData();
+                    break;
+                case R.id.btn_edit:
+                    // beams a logged meal’s model to the dialog for user edit
+                    ((MainActivity)getActivity()).showTrackerDialog(refreshListener,f);
+                    break;
             }
         });
     }
