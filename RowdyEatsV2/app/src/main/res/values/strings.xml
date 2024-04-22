@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">RowdyEats</string>
+    <string name="app_welcome">Welcome to\nRowdy Eats!</string>
+    <string name="name">Your Name</string>
+
+    <!--Home Screen Menu Buttons-->
+    <string name="FoodLog">Food Log</string>
+    <string name="UTSADiningOptions">UTSA Dining Options</string>
+    <string name="MealSuggestions">Meal Suggestions</string>
+    <string name="CalorieCalculator">Calorie Calculator</string>
+
+    <string name="FoodLogDescription">This screen allows you to easily view the foods you have logged as you consume them. </string>
+    <string name="UTSADiningOptionsDescription">On this screen, you can explore the various restaurant options available at UTSA. Browse and add food items from their menus to your daily intake directly.</string>
+    <string name="MealSuggestionsDescription">This screen provides weekly meal suggestions complete with simple, follow-along recipes and their nutritional facts.</string>
+    <string name="CalorieCalculatorDescription">Use this screen to calculate your maintenance calories based on various physical factors. This tool helps tailor your dietary needs to your specific health and fitness goals.</string>
 
     <string name="preferences_file_key">RowdyEatsPrefs</string>
     <string name="preferences_name_key">RowdyEatsPrefsName</string>
