@@ -23,7 +23,7 @@ public class CSVReader {
         ArrayList<String[]> parsed = new ArrayList<>();
 
         try {
-            reader.readLine();
+            reader.readLine(); // 1st line is columns’ headings
             String line;
             while ((line = reader.readLine()) != null) {
                 parsed.add(line.split(","));

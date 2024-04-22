@@ -26,13 +26,7 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <argument
-            android:name="head"
-            app:argType="string"/>
-        <argument
-            android:name="picture"
-            app:argType="reference"/>
-        <argument
-            android:name="body"
-            app:argType="reference"/>
+            android:name="model"
+            app:argType="edu.utsa.cs3443.rowdyeatsv2.Model.Recipe"/>
     </fragment>
 </navigation>

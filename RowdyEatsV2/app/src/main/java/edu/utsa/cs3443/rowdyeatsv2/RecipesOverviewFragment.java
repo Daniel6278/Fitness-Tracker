@@ -31,7 +31,7 @@ public class RecipesOverviewFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recipesRV);
 
         // created new array list..
-        ArrayList<Recipe> recyclerDataArrayList = Recipe.getModels();
+        ArrayList<Recipe> recyclerDataArrayList = Recipe.getModels(view.getContext().getAssets());
 
         // added data from arraylist to adapter class.
         RecipesRecyclerViewAdapter adapter = new RecipesRecyclerViewAdapter(recyclerDataArrayList, view.getContext());
@@ -48,7 +48,7 @@ public class RecipesOverviewFragment extends Fragment {
                 */
 
                 edu.utsa.cs3443.rowdyeatsv2.RecipesOverviewFragmentDirections.ActionRecipesOverviewToRecipeDetails action =
-                        RecipesOverviewFragmentDirections.actionRecipesOverviewToRecipeDetails(model.getTitle(),model.getImgId(),model.getRecipeBodyId());
+                        RecipesOverviewFragmentDirections.actionRecipesOverviewToRecipeDetails(model);
 
                 Navigation.findNavController(view).navigate(action);
             }
