@@ -11,11 +11,16 @@ public class Constants {
     static {
         Map<String, Integer> aMap = new HashMap<>();
 
-        aMap.put("chickfilalogo",R.drawable.chickfilalogo);
-        aMap.put("sushiclogo",R.drawable.sushiclogo);
-        aMap.put("subwaylogo",R.drawable.subwaylogo);
-        aMap.put("utsabirdlogo_transparent",R.drawable.utsabirdlogo_transparent);
+        // fooditems
 
+        // categories
+        aMap.put("sushiclogo",R.drawable.sushiclogo);
+        aMap.put("restaurant_logo_chickfila",R.drawable.restaurant_logo_chickfila);
+        aMap.put("restaurant_logo_subway",R.drawable.restaurant_logo_subway);
+        aMap.put("utsabirdlogo_transparent",R.drawable.utsabirdlogo_transparent);
+        aMap.put("app_logo_transparent",R.drawable.app_logo_transparent);
+
+        // recipes
         aMap.put("recipe_pumpkin_mac_n_cheese",R.drawable.recipe_pumpkin_mac_n_cheese);
         aMap.put("recipe_ratatouille",R.drawable.recipe_ratatouille);
         aMap.put("recipe_parmesan_pasta",R.drawable.recipe_parmesan_pasta);

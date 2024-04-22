@@ -13,6 +13,7 @@
         app:icon="@drawable/icon_add"
         app:iconTint="@color/orange_dark"
         android:layout_alignParentRight="true"
+        app:iconSize="30dp"
         android:layout_margin="12dp"
         app:iconGravity="end"
         style="@style/Widget.MaterialComponents.Button.TextButton"/>
@@ -29,6 +30,7 @@
         app:icon="@drawable/icon_macros"
         app:iconTint="@color/blue"
         app:iconGravity="end"
+        app:iconSize="30dp"
         style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
     <LinearLayout
@@ -43,13 +45,15 @@
             android:layout_height="75dp"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher"
+            android:layout_margin="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="12dp"
+            android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/food_preset_name"
@@ -58,13 +62,16 @@
                 android:layout_marginBottom="8dp"
                 android:text="Granny Smith Apple"
                 android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.RowdyEats.BodyLarge" />
+                android:textAppearance="@style/TextAppearance.RowdyEats.BodyLarge"
+
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:maxLines="1"/>
 
             <TextView
                 android:id="@+id/food_preset_calories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="0 Calories"
                 android:textAppearance="@style/TextAppearance.RowdyEats.BodyMedium" />
         </LinearLayout>

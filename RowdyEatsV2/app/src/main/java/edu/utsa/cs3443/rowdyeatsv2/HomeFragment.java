@@ -21,6 +21,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.card.MaterialCardView;
+
 import java.util.Calendar;
 
 public class HomeFragment extends Fragment {
@@ -41,7 +43,8 @@ public class HomeFragment extends Fragment {
         Toast.makeText(getContext(), "Name Changed!", Toast.LENGTH_LONG).show();
     }
 
-    private boolean[] areMenusVisible = {false,false,false,false};
+    //private boolean[] areMenusVisible = {false,false,false,false};
+    private Integer selectedMenuIndex = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -114,27 +117,30 @@ public class HomeFragment extends Fragment {
                 R.id.btnMenu3,
                 R.id.btnMenu4,
         };
-        final int[] dropdownsIds = {
-                R.id.txtDropdown1,
-                R.id.txtDropdown2,
-                R.id.txtDropdown3,
-                R.id.txtDropdown4,
+
+        final int[] descriptionsStringsIds = {
+                R.string.mainPageDescription_FoodLog,
+                R.string.mainPageDescription_UTSADiningOptions,
+                R.string.mainPageDescription_UTSADiningOptions,
+                R.string.mainPageDescription_CalorieCalculator,
         };
 
         for (int i = 0; i < btnsIds.length; ++i) {
 
-            //Drop down buttons on HomeScreen
+            // Explainer buttons on HomeScreen
             final Button btnMenu = view.findViewById(btnsIds[i]);
-            final TextView txtDropdown = view.findViewById(dropdownsIds[i]);
+            final MaterialCardView tooltipBox = view.findViewById(R.id.tooltip);
+            final TextView tooltipText = view.findViewById(R.id.tooltipTxt);
 
             final int finalI = i;
             btnMenu.setOnClickListener(new View.OnClickListener() {
                 final int btnIndex = finalI;
                 @Override
                 public void onClick(View _view) {
-                    // Toggle visibility of the dropdown text
-                    areMenusVisible[btnIndex] = !areMenusVisible[btnIndex];
-                    txtDropdown.setVisibility(areMenusVisible[btnIndex] ? View.VISIBLE : View.GONE);
+                    // Toggle visibility of the description text
+                    selectedMenuIndex = selectedMenuIndex == btnIndex ? null : btnIndex;
+                    tooltipText.setText(descriptionsStringsIds[btnIndex]);
+                    tooltipBox.setVisibility(selectedMenuIndex == null ? View.GONE : View.VISIBLE);
                 }
             });
         }

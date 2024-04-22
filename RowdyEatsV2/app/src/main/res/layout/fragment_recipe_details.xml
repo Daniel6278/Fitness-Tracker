@@ -41,7 +41,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.RowdyEats.BodyMedium"
-                android:padding="24dp"/>
+                android:padding="24dp"
+                android:linksClickable="true"/>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

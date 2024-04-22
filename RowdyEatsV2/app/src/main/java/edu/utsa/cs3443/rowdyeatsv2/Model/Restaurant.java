@@ -28,7 +28,7 @@ public class Restaurant implements Serializable {
         for (String[] strings : csvRawData) {
             if (strings.length < 3) {
                 // when no image provided in CSV
-                list.add(new Restaurant(strings[0],R.drawable.app_logo_transparent,strings[1]));
+                list.add(new Restaurant(strings[0],R.drawable.icon_restaurant_faded,strings[1]));
                 continue;
             }
             // when image is provided in CSV

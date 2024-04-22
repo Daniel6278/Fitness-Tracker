@@ -11,7 +11,7 @@ import edu.utsa.cs3443.rowdyeatsv2.data.Constants;
 
 public class FoodPreset implements Serializable {
 
-    private static final int DEFAULT_IMAGE_ID = R.drawable.forkandknifelogo;
+    private static final int DEFAULT_IMAGE_ID = R.drawable.icon_food_faded;
 
     private static final String DATA_FOLDER_PATH = "csv/FoodPreset";
 
@@ -55,7 +55,13 @@ public class FoodPreset implements Serializable {
             double fat = Double.parseDouble(strings[2]);
             double carbs = Double.parseDouble(strings[3]);
             double protein = Double.parseDouble(strings[4]);
-            list.add(new FoodPreset(name,calories,new Nutrition(calories,fat,carbs,protein)));
+            if (strings.length < 6) {
+                // when no image provided in CSV
+                list.add(new FoodPreset(name,calories,new Nutrition(calories,fat,carbs,protein)));
+                continue;
+            }
+            // when image is provided in CSV
+            list.add(new FoodPreset(name,calories,new Nutrition(calories,fat,carbs,protein),Constants.DRAWABLES.get(strings[5])));
         }
         return list;
     }
@@ -73,13 +79,15 @@ public class FoodPreset implements Serializable {
         this.nutrition = nutrition;
     }
 
+    /*
     public FoodPreset(String foodName, int calories, int imgId) {
         this.foodName = foodName;
         this.calories = calories;
         this.imgId = imgId;
     }
+     */
 
-    public FoodPreset(String foodName, int calories, int imgId, Nutrition nutrition) {
+    public FoodPreset(String foodName, int calories, Nutrition nutrition, int imgId) {
         this.foodName = foodName;
         this.calories = calories;
         this.imgId = imgId;

@@ -16,7 +16,8 @@
             android:layout_height="75dp"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher"
+            android:layout_margin="8dp"/>
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -32,7 +33,11 @@
                 android:layout_centerVertical="true"
                 android:text="Sushi-C"
                 android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.RowdyEats.H1" />
+                android:textAppearance="@style/TextAppearance.RowdyEats.H1"
+
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:maxLines="1"/>
 
         </RelativeLayout>
 

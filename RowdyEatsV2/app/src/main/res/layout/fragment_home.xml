@@ -9,10 +9,10 @@
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="match_parent"
-        android:layout_height="175dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="25dp"
         android:contentDescription="@string/alt_UTSALogo"
-        android:src="@drawable/rowdyeatslogo"
+        android:src="@drawable/rowdyeatslogo_alt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,22 +20,22 @@
     <Button
         android:id="@+id/btnMenu1"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="25dp"
         android:text="@string/FoodLog"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
     <Button
         android:id="@+id/btnMenu2"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:text="@string/UTSADiningOptions"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,9 +46,9 @@
     <Button
         android:id="@+id/btnMenu3"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:text="@string/MealSuggestions"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,9 +59,9 @@
     <Button
         android:id="@+id/btnMenu4"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:text="@string/CalorieCalculator"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,68 +69,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMenu3" />
 
-    <TextView
-        android:id="@+id/txtDropdown1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/FoodLogDescription"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/tooltip"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="25dp"
+        android:backgroundTint="@color/gray_light"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/btnMenu1"
+        app:layout_constraintTop_toTopOf="@id/userGreeting"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/editTextName"
+        android:elevation="5dp"
+        >
 
-    <TextView
-        android:id="@+id/txtDropdown2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/UTSADiningOptionsDescription"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/btnMenu2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/tooltipTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="25dp"/>
 
-    <TextView
-        android:id="@+id/txtDropdown3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/MealSuggestionsDescription"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/btnMenu3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/txtDropdown4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/CalorieCalculatorDescription"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/btnMenu4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/userGreeting"
+        style="@style/TextAppearance.RowdyEats.DisplayMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:text="@string/app_welcome"
-        android:textAppearance="@style/TextAppearance.RowdyEats.DisplayMedium"
         android:textColor="@color/orange_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        />
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="75dp"
         android:minEms="5"
         android:inputType="text"
         android:hint="@string/name"
