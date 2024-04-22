@@ -121,7 +121,7 @@ public class HomeFragment extends Fragment {
         final int[] descriptionsStringsIds = {
                 R.string.mainPageDescription_FoodLog,
                 R.string.mainPageDescription_UTSADiningOptions,
-                R.string.mainPageDescription_UTSADiningOptions,
+                R.string.mainPageDescription_MealSuggestions,
                 R.string.mainPageDescription_CalorieCalculator,
         };
 

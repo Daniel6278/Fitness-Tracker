@@ -22,52 +22,52 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:text="@string/FoodLog"
         android:textColor="@color/white"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintBottom_toTopOf="@+id/btnMenu2" />
 
     <Button
         android:id="@+id/btnMenu2"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/UTSADiningOptions"
         android:textColor="@color/white"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMenu1" />
+        app:layout_constraintBottom_toTopOf="@+id/btnMenu3" />
 
     <Button
         android:id="@+id/btnMenu3"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/MealSuggestions"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMenu2" />
+        app:layout_constraintBottom_toTopOf="@+id/btnMenu4" />
 
     <Button
         android:id="@+id/btnMenu4"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/CalorieCalculator"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMenu3" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="25dp"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/tooltip"
@@ -79,7 +79,8 @@
         app:layout_constraintTop_toTopOf="@id/userGreeting"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/editTextName"
+        app:layout_constraintBottom_toTopOf="@id/btnMenu1"
+        android:layout_marginBottom="25dp"
         android:elevation="5dp"
         >
 
@@ -87,7 +88,11 @@
             android:id="@+id/tooltipTxt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="25dp"/>
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp"
+            android:textAppearance="@style/TextAppearance.RowdyEats.BodySmall"
+            android:ellipsize="end"
+            />
 
     </com.google.android.material.card.MaterialCardView>
 
