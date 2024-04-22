@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.Navigation;
 
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,7 @@ public class RecipeDetailsFragment extends Fragment {
         recipeDetailsPagePicture.setImageResource(model.getImgId());
         TextView recipeDetailsPageBody = view.findViewById(R.id.recipeBody);
         recipeDetailsPageBody.setText(HtmlCompat.fromHtml(getString(model.getRecipeBodyId()),0)); // html rich text
+        recipeDetailsPageBody.setMovementMethod(LinkMovementMethod.getInstance());
 
         recipeDetailsPageToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
