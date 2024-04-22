@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class CSVReader {
+
+    private static final String DELIMIT_REGEX = ",(?=([^\"]*\"[^\"]*\")*[^\"]*$)"; // https://stackoverflow.com/a/15739087
     public static ArrayList<String[]> readStrings(AssetManager assetManager,String path) {
         InputStreamReader is;
         try {
@@ -26,7 +28,7 @@ public class CSVReader {
             reader.readLine(); // 1st line is columns’ headings
             String line;
             while ((line = reader.readLine()) != null) {
-                parsed.add(line.split(","));
+                parsed.add(line.split(DELIMIT_REGEX));
             }
         }
         catch (IOException e) {

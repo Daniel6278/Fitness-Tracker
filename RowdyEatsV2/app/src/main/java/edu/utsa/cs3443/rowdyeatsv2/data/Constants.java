@@ -41,7 +41,7 @@ public class Constants {
         bMap.put("recipe_garlic_chicken",R.string.recipe_garlic_chicken);
         bMap.put("recipe_bkfst_sandwich",R.string.recipe_bkfst_sandwich);
 
-        STRINGS = Collections.unmodifiableMap(aMap);
+        STRINGS = Collections.unmodifiableMap(bMap);
     }
     public static final String DATABASE_NAME = "caloriesDb";
     public static final int DATABASE_VERSION = 1;
