@@ -39,6 +39,16 @@
         <li>Transfer the roll onto a cutting board. Rub a knife on a damp paper towel before slicing the roll into six equal portions.</li>
         <li>Enjoy!</li>
         </ul>
+
+        <h1>Nutrition Info</h1>
+        <ul>
+        <li>Calories 432</li>
+        <li>Fat 9g</li>
+        <li>Carbs 63g</li>
+        <li>Fiber 0g</li>
+        <li>Sugar 56g</li>
+        <li>Protein 7g</li>
+        </ul>
         ]]>
     </string>
     <string name="recipe_garlic_chicken">
@@ -54,6 +64,16 @@
         <li>Pour the gravy over the chicken and serve with vegetables.</li>
         <li>Enjoy!</li>
         </ul>
+
+        <h1>Nutrition Info</h1>
+        <ul>
+        <li>Calories 590</li>
+        <li>Fat 32g</li>
+        <li>Carbs 30g</li>
+        <li>Fiber 1g</li>
+        <li>Sugar 5g</li>
+        <li>Protein 40g</li>
+        </ul>
         ]]>
     </string>
     <string name="recipe_parmesan_pasta">
@@ -68,6 +88,17 @@
         <li>Serve immediately, and top with parsley.</li>
         <li>Enjoy!</li>
         </ul>
+
+        <h1>Nutrition Info</h1>
+        <ul>
+        <li>Calories 334</li>
+        <li>Fat 10g</li>
+        <li>Carbs 49g</li>
+        <li>Fiber 1g</li>
+        <li>Sugar 6g</li>
+        <li>Protein 13g</li>
+        </ul>
+
         ]]>
     </string>
     <string name="recipe_bkfst_sandwich">
@@ -80,6 +111,16 @@
         <li>Remove the cover and use a fork pull the lid off of the egg. Flip the egg and cook for another 3 minutes, until cooked through.</li>
         <li>Place the egg patty on the English muffin and top with the sliced avocado.</li>
         <li>Enjoy!</li>
+        </ul>
+
+        <h1>Nutrition Info</h1>
+        <ul>
+        <li>Calories 500</li>
+        <li>Fat 25g</li>
+        <li>Carbs 23g</li>
+        <li>Fiber 2g</li>
+        <li>Sugar 10g</li>
+        <li>Protein 21g</li>
         </ul>
         ]]>
     </string>
@@ -96,6 +137,16 @@
         <li>Cover the pan with foil and bake for 40 minutes. Uncover, then bake for another 20 minutes, until the vegetables are softened.</li>
         <li>Serve hot as a main dish or side. The ratatouille is also excellent the next day–cover with foil and reheat in a 350˚F (180˚C) oven for 15 minutes, or simply microwave to desired temperature.</li>
         <li>Enjoy!</li>
+        </ul>
+
+        <h1>Nutrition Info</h1>
+        <ul>
+        <li>Calories 140</li>
+        <li>Fat 3g</li>
+        <li>Carbs 27g</li>
+        <li>Fiber 7g</li>
+        <li>Sugar 13g</li>
+        <li>Protein 4g</li>
         </ul>
         ]]>
     </string>
@@ -133,6 +184,17 @@
         <p>*PUMPKIN SPICE AMOUNTS: To make just enough pumpkin spice for this recipe, use ¾  teaspoon ground cinnamon, ½ teaspoon ground ginger, ¼ teaspoon ground nutmeg, and a little pinch of allspice or cloves.</p>
         <p>MAKE IT GLUTEN FREE: Gluten-free pastas vary widely. Choose a spiral-shaped gluten-free brown rice pasta, such as fusilli, over other pasta types (my tester was pleased with Jovial brand). Stir gently and don’t cook the pasta any longer than necessary or it may start to lose its shape.</p>
         </ul>
+
+        <h1>Nutrition Info</h1>
+        <ul>
+        <li>Calories 450</li>
+        <li>Fat 20g</li>
+        <li>Carbs 50g</li>
+        <li>Fiber 4g</li>
+        <li>Sugar 4g</li>
+        <li>Protein 18g</li>
+        </ul>
+
         ]]>
     </string>
 </resources>
