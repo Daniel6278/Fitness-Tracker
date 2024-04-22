@@ -21,6 +21,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.Model.FoodRecord;
+import edu.utsa.cs3443.rowdyeatsv2.Model.Restaurant;
 import edu.utsa.cs3443.rowdyeatsv2.adapters.CafeRecyclerViewAdapter;
 import edu.utsa.cs3443.rowdyeatsv2.Model.FoodPreset;
 
@@ -37,22 +38,21 @@ public class CafeSubMenuFragment extends Fragment {
 
         CafeSubMenuFragmentArgs args = CafeSubMenuFragmentArgs.fromBundle(getArguments());
 
+        Restaurant parentModel = args.getModel();
+
         // sets toolbar text
         Toolbar subMenuToolbar = view.findViewById(R.id.toolbar);
-        subMenuToolbar.setTitle(args.getHead());
+        subMenuToolbar.setTitle(parentModel.getTitle());
 
-        subMenuToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //What to do on back clicked
-                Navigation.findNavController(view).navigate(R.id.action_cafeSubMenuFragment_to_cafeTopMenuFragment);
-            }
+        subMenuToolbar.setNavigationOnClickListener(v -> {
+            //What to do on back clicked
+            Navigation.findNavController(view).navigate(R.id.action_cafeSubMenuFragment_to_cafeTopMenuFragment);
         });
 
         RecyclerView recyclerView = view.findViewById(R.id.cafeSubRV);
 
         // created new array list..
-        ArrayList<FoodPreset> recyclerDataArrayList = FoodPreset.getModels(args.getHead());
+        ArrayList<FoodPreset> recyclerDataArrayList = FoodPreset.getModels(view.getContext().getAssets(),parentModel);
 
         // added data from arraylist to adapter class.
         CafeRecyclerViewAdapter adapter = new CafeRecyclerViewAdapter(recyclerDataArrayList, view.getContext());

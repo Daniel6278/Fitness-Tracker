@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import edu.utsa.cs3443.rowdyeatsv2.Model.Recipe;
+
 public class RecipeDetailsFragment extends Fragment {
 
     public RecipeDetailsFragment() {
@@ -39,12 +41,14 @@ public class RecipeDetailsFragment extends Fragment {
 
         RecipeDetailsFragmentArgs args = RecipeDetailsFragmentArgs.fromBundle(getArguments());
 
+        Recipe model = args.getModel();
+
         Toolbar recipeDetailsPageToolbar = view.findViewById(R.id.toolbar);
-        recipeDetailsPageToolbar.setTitle(args.getHead());
+        recipeDetailsPageToolbar.setTitle(model.getTitle());
         ImageView recipeDetailsPagePicture = view.findViewById(R.id.recipePicture);
-        recipeDetailsPagePicture.setImageResource(args.getPicture());
+        recipeDetailsPagePicture.setImageResource(model.getImgId());
         TextView recipeDetailsPageBody = view.findViewById(R.id.recipeBody);
-        recipeDetailsPageBody.setText(HtmlCompat.fromHtml(getString(args.getBody()),0)); // html rich text
+        recipeDetailsPageBody.setText(HtmlCompat.fromHtml(getString(model.getRecipeBodyId()),0)); // html rich text
 
         recipeDetailsPageToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

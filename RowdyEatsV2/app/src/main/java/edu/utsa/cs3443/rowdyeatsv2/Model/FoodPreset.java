@@ -1,11 +1,19 @@
 package edu.utsa.cs3443.rowdyeatsv2.Model;
 
+import android.content.res.AssetManager;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.R;
+import edu.utsa.cs3443.rowdyeatsv2.data.CSVReader;
+import edu.utsa.cs3443.rowdyeatsv2.data.Constants;
 
 public class FoodPreset implements Serializable {
+
+    private static final int DEFAULT_IMAGE_ID = R.drawable.forkandknifelogo;
+
+    private static final String DATA_FOLDER_PATH = "csv/FoodPreset";
 
     private String foodName;
     private Nutrition nutrition;
@@ -13,9 +21,9 @@ public class FoodPreset implements Serializable {
 
     private int imgId;
 
-    public static ArrayList<FoodPreset> getModels(String parentCategoryName) {
+    public static ArrayList<FoodPreset> getModels(AssetManager assets,Restaurant parent) {
         ArrayList<FoodPreset> list = new ArrayList<>();
-
+        /*
         switch (parentCategoryName) {
             // add data to array list
             // TODO : make this stuff not hardcoded
@@ -33,7 +41,36 @@ public class FoodPreset implements Serializable {
                 list.add(new FoodPreset("Subway Club (6\")", 750, R.drawable.subwaylogo,new Nutrition(750,30,120,45)));
                 break;
         }
+        */
+        ArrayList<String[]> csvRawData = CSVReader.readStrings(assets,DATA_FOLDER_PATH + "/" + parent.getFoodsFileName() + ".csv");
+        for (String[] strings : csvRawData) {
+            String name = strings[0];
+            int calories = Integer.parseInt(strings[1]);
+            if (strings.length < 3) {
+                // when no macros provided in CSV
+                list.add(new FoodPreset(name,calories));
+                continue;
+            }
+            // when macros are provided in CSV
+            double fat = Double.parseDouble(strings[2]);
+            double carbs = Double.parseDouble(strings[3]);
+            double protein = Double.parseDouble(strings[4]);
+            list.add(new FoodPreset(name,calories,new Nutrition(calories,fat,carbs,protein)));
+        }
         return list;
+    }
+
+    public FoodPreset(String foodName, int calories) {
+        this.foodName = foodName;
+        this.calories = calories;
+        this.imgId = DEFAULT_IMAGE_ID;
+    }
+
+    public FoodPreset(String foodName, int calories, Nutrition nutrition) {
+        this.foodName = foodName;
+        this.calories = calories;
+        this.imgId = DEFAULT_IMAGE_ID;
+        this.nutrition = nutrition;
     }
 
     public FoodPreset(String foodName, int calories, int imgId) {
