@@ -138,7 +138,7 @@ public class HomeFragment extends Fragment {
                 @Override
                 public void onClick(View _view) {
                     // Toggle visibility of the description text
-                    selectedMenuIndex = selectedMenuIndex == btnIndex ? null : btnIndex;
+                    selectedMenuIndex = (selectedMenuIndex != null && selectedMenuIndex == btnIndex) ? null : btnIndex;
                     tooltipText.setText(descriptionsStringsIds[btnIndex]);
                     tooltipBox.setVisibility(selectedMenuIndex == null ? View.GONE : View.VISIBLE);
                 }
