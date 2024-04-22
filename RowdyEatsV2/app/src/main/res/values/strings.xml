@@ -26,8 +26,63 @@
     <string name="nutritionPlaceholder">Nutrition details are unavailable for this food item.</string>
 
     <!--Recipes-->
-    <string name="recipe_sushi">lorem ipsum sushi</string>
-    <string name="recipe_bkfst_sandwich">lorem ipsum burger</string>
+    <string name="recipe_sushi">
+        <![CDATA[
+        <p>Source: <a href="https://tasty.co/recipe/philadelphia-roll">https://tasty.co/recipe/philadelphia-roll</a></p>
+
+        <ul>
+        <li>Season the sushi rice with the rice vinegar, fanning and stirring until room temperature.</li>
+        <li>On the rolling mat place one sheet of nori with the rough side facing upwards.</li>
+        <li>Wet your hands and grab a handful of rice and place it on the nori. Spread the rice evenly throughout the nori without smushing the rice down.</li>
+        <li>Arrange, in a horizontal row 1 inch (2 cm) from the bottom, smoked salmon, cream cheese, and cucumber.</li>
+        <li>Grabbing both nori and the mat, roll the mat over the filling so the extra space at the bottom touches the other side, squeezing down to make a nice tight roll. Squeeze down along the way to keep the roll from holding its shape.</li>
+        <li>Transfer the roll onto a cutting board. Rub a knife on a damp paper towel before slicing the roll into six equal portions.</li>
+        <li>Enjoy!</li>
+        </ul>
+        ]]>
+    </string>
+    <string name="recipe_garlic_chicken">
+        <![CDATA[
+        <p>Source: <a href="https://tasty.co/recipe/slow-cooker-lemon-garlic-chicken">https://tasty.co/recipe/slow-cooker-lemon-garlic-chicken</a></p>
+
+        <ul>
+        <li>Place the chicken, salt, pepper, oregano, rosemary, and thyme into the slow cooker and mix together with your hands.</li>
+        <li>Add the garlic, lemon, and water.</li>
+        <li>Place the lid on and cook on high for 3 hours.</li>
+        <li>Remove the chicken, lemon, and garlic, and stir in the chicken stock and cornflour mix.</li>
+        <li>Stir until you reach your desired consistency for chicken gravy.</li>
+        <li>Pour the gravy over the chicken and serve with vegetables.</li>
+        <li>Enjoy!</li>
+        </ul>
+        ]]>
+    </string>
+    <string name="recipe_parmesan_pasta">
+        <![CDATA[
+        <p>Source: <a href="https://tasty.co/recipe/one-pot-garlic-parmesan-pasta">https://tasty.co/recipe/one-pot-garlic-parmesan-pasta</a></p>
+
+        <ul>
+        <li>Heat unsalted butter in a large skillet over medium high heat. Add garlic and cook, stirring frequently, until fragrant, about 1-2 minutes.</li>
+        <li>Add in the chicken broth, milk, and fettuccine. Season with salt and pepper.</li>
+        <li>Bring the pot to a boil, then reduce heat and simmer, stirring occasionally, until pasta is cooked through, about 18-20 minutes.</li>
+        <li>Stir in Parmesan. If the mixture is too thick, add more milk as needed until desired consistency is reached.</li>
+        <li>Serve immediately, and top with parsley.</li>
+        <li>Enjoy!</li>
+        </ul>
+        ]]>
+    </string>
+    <string name="recipe_bkfst_sandwich">
+        <![CDATA[
+        <p>Source: <a href="https://tasty.co/recipe/healthy-breakfast-sandwich">https://tasty.co/recipe/healthy-breakfast-sandwich</a></p>
+
+        <ul>
+        <li>In a medium bowl, whisk together the egg, spinach, red bell pepper, black pepper, and salt.</li>
+        <li>Heat a nonstick pan over medium heat. Place a greased mason jar lid right-side up in the pan. Slowly pour the egg mixture into the lid. Cover the pan and cook for 3 minutes, until the egg has set on the bottom.</li>
+        <li>Remove the cover and use a fork pull the lid off of the egg. Flip the egg and cook for another 3 minutes, until cooked through.</li>
+        <li>Place the egg patty on the English muffin and top with the sliced avocado.</li>
+        <li>Enjoy!</li>
+        </ul>
+        ]]>
+    </string>
     <string name="recipe_ratatouille">
         <![CDATA[
         <p>Source: <a href="https://tasty.co/recipe/ratatouille">tasty.co/recipe/ratatouille</a></p>
