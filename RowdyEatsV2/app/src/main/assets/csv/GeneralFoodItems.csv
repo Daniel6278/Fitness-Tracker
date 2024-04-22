@@ -1,10 +1,10 @@
 name,calories,totalfat,carbs,protein
-Cornstarch,381,0.1g,91.27 g,0.26 g
-"Nuts, pecans",691,72g,13.86 g,9.17 g
-"Eggplant, raw",25,0.2g,5.88 g,0.98 g
-"Teff, uncooked",367,2.4g,73.13 g,13.30 g
-"Sherbet, orange",144,2g,30.40 g,1.10 g
-"Cauliflower, raw",25,0.3g,4.97 g,1.92 g
+Cornstarch,381,0.1g,91.27,0.26
+"Nuts, pecans",691,72,13.86,9.17
+"Eggplant, raw",25,0.2,5.88,0.98
+"Teff, uncooked",367,2.4,73.13,13.30
+"Sherbet, orange",144,2,30.40,1.10
+"Cauliflower, raw",25,0.3,4.97,1.92
 "Taro leaves, raw",42,0.7g,6.70 g,4.98 g
 "Lamb, raw, ground",282,23g,0.00 g,16.56 g
 "Cheese, camembert",300,24g,0.46 g,19.80 g
