@@ -33,7 +33,7 @@ public class CafeTopMenuFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.cafeSuperRV);
 
         // created new array list..
-        ArrayList<Restaurant> recyclerDataArrayList = Restaurant.getModels();
+        ArrayList<Restaurant> recyclerDataArrayList = Restaurant.getModels(view.getContext().getAssets());
 
         // added data from arraylist to adapter class.
         RestaurantsRecyclerViewAdapter adapter = new RestaurantsRecyclerViewAdapter(recyclerDataArrayList, view.getContext());
@@ -44,7 +44,7 @@ public class CafeTopMenuFragment extends Fragment {
             public void onClick(int position, Restaurant model) {
 
                 CafeTopMenuFragmentDirections.ActionCafeTopMenuFragmentToCafeSubMenuFragment action =
-                        CafeTopMenuFragmentDirections.actionCafeTopMenuFragmentToCafeSubMenuFragment(model.getTitle());
+                        CafeTopMenuFragmentDirections.actionCafeTopMenuFragmentToCafeSubMenuFragment(model);
 
                 Navigation.findNavController(view).navigate(action);
             }

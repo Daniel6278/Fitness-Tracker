@@ -27,8 +27,8 @@
         </action>
 
         <argument
-            android:name="head"
-            app:argType="string"/>
+            android:name="model"
+            app:argType="edu.utsa.cs3443.rowdyeatsv2.Model.Restaurant"/>
 
     </fragment>
 </navigation>
