@@ -15,6 +15,8 @@ public class Recipe implements Serializable {
         list.add(new Recipe("Ratatouille",R.drawable.recipe_ratatouille, R.string.recipe_ratatouille));
         list.add(new Recipe("Sushi", R.drawable.recipe_sushi, R.string.recipe_sushi));
         list.add(new Recipe("Breakfast Sandwich",R.drawable.recipe_bkfst_sandwich, R.string.recipe_bkfst_sandwich));
+        list.add(new Recipe("Lemon Garlic Chicken",R.drawable.recipe_garlic_chicken,R.string.recipe_garlic_chicken));
+        list.add(new Recipe("Garlic Parmesan Pasta",R.drawable.recipe_parmesan_pasta,R.string.recipe_parmesan_pasta));
         return list;
     }
     private String title;
