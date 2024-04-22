@@ -10,15 +10,32 @@ public class Constants {
     public static final Map<String,Integer> STRINGS;
     static {
         Map<String, Integer> aMap = new HashMap<>();
+
         aMap.put("chickfilalogo",R.drawable.chickfilalogo);
         aMap.put("sushiclogo",R.drawable.sushiclogo);
         aMap.put("subwaylogo",R.drawable.subwaylogo);
         aMap.put("utsabirdlogo_transparent",R.drawable.utsabirdlogo_transparent);
+
+        aMap.put("recipe_pumpkin_mac_n_cheese",R.string.recipe_pumpkin_mac_n_cheese);
+        aMap.put("recipe_ratatouille",R.string.recipe_ratatouille);
+        aMap.put("recipe_parmesan_pasta",R.string.recipe_parmesan_pasta);
+        aMap.put("recipe_sushi",R.string.recipe_sushi);
+        aMap.put("recipe_garlic_chicken",R.string.recipe_garlic_chicken);
+        aMap.put("recipe_bkfst_sandwich",R.string.recipe_bkfst_sandwich);
+
         DRAWABLES = Collections.unmodifiableMap(aMap);
 
+        //
+
         Map<String, Integer> bMap = new HashMap<>();
-        bMap.put("recipe_ratatouille",R.string.recipe_ratatouille);
+        
         bMap.put("recipe_pumpkin_mac_n_cheese",R.string.recipe_pumpkin_mac_n_cheese);
+        bMap.put("recipe_ratatouille",R.string.recipe_ratatouille);
+        bMap.put("recipe_parmesan_pasta",R.string.recipe_parmesan_pasta);
+        bMap.put("recipe_sushi",R.string.recipe_sushi);
+        bMap.put("recipe_garlic_chicken",R.string.recipe_garlic_chicken);
+        bMap.put("recipe_bkfst_sandwich",R.string.recipe_bkfst_sandwich);
+
         STRINGS = Collections.unmodifiableMap(aMap);
     }
     public static final String DATABASE_NAME = "caloriesDb";
