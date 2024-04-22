@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.R;
-import edu.utsa.cs3443.rowdyeatsv2.data.CSVReader;
+import edu.utsa.cs3443.rowdyeatsv2.data.AppCSVReader;
 import edu.utsa.cs3443.rowdyeatsv2.data.Constants;
 
 public class Restaurant implements Serializable {
@@ -24,7 +24,7 @@ public class Restaurant implements Serializable {
         list.add(new Restaurant("Einstein Bros. Bagels",R.drawable.restaurant_logo_einsteinbrosbagels));
         list.add(new Restaurant("Dragon Bowl Z",R.drawable.restaurant_logo_dragonbowlz));
         */
-        ArrayList<String[]> csvRawData = CSVReader.readStrings(assets,DATA_FILE_PATH);
+        ArrayList<String[]> csvRawData = AppCSVReader.readStrings(assets,DATA_FILE_PATH);
         for (String[] strings : csvRawData) {
             if (strings.length < 3) {
                 // when no image provided in CSV

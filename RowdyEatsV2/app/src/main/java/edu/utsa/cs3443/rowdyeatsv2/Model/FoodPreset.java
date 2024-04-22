@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.rowdyeatsv2.R;
-import edu.utsa.cs3443.rowdyeatsv2.data.CSVReader;
+import edu.utsa.cs3443.rowdyeatsv2.data.AppCSVReader;
 import edu.utsa.cs3443.rowdyeatsv2.data.Constants;
 
 public class FoodPreset implements Serializable {
@@ -42,7 +42,7 @@ public class FoodPreset implements Serializable {
                 break;
         }
         */
-        ArrayList<String[]> csvRawData = CSVReader.readStrings(assets,DATA_FOLDER_PATH + "/" + parent.getFoodsFileName() + ".csv");
+        ArrayList<String[]> csvRawData = AppCSVReader.readStrings(assets,DATA_FOLDER_PATH + "/" + parent.getFoodsFileName() + ".csv");
         for (String[] strings : csvRawData) {
             String name = strings[0];
             int calories = Integer.parseInt(strings[1]);

@@ -5,8 +5,7 @@ import android.content.res.AssetManager;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import edu.utsa.cs3443.rowdyeatsv2.R;
-import edu.utsa.cs3443.rowdyeatsv2.data.CSVReader;
+import edu.utsa.cs3443.rowdyeatsv2.data.AppCSVReader;
 import edu.utsa.cs3443.rowdyeatsv2.data.Constants;
 
 public class Recipe implements Serializable {
@@ -25,7 +24,7 @@ public class Recipe implements Serializable {
         list.add(new Recipe("Lemon Garlic Chicken",R.drawable.recipe_garlic_chicken,R.string.recipe_garlic_chicken));
         list.add(new Recipe("Garlic Parmesan Pasta",R.drawable.recipe_parmesan_pasta,R.string.recipe_parmesan_pasta));
          */
-        ArrayList<String[]> csvRawData = CSVReader.readStrings(assets,DATA_FILE_PATH);
+        ArrayList<String[]> csvRawData = AppCSVReader.readStrings(assets,DATA_FILE_PATH);
         for (String[] strings : csvRawData) {
             list.add(new Recipe(strings[0], Constants.DRAWABLES.get(strings[1]),Constants.STRINGS.get(strings[2])));
         }

@@ -19,6 +19,7 @@ public class Constants {
         aMap.put("restaurant_logo_subway",R.drawable.restaurant_logo_subway);
         aMap.put("utsabirdlogo_transparent",R.drawable.utsabirdlogo_transparent);
         aMap.put("app_logo_transparent",R.drawable.app_logo_transparent);
+        aMap.put("icon_cook",R.drawable.icon_cook);
 
         // recipes
         aMap.put("recipe_pumpkin_mac_n_cheese",R.drawable.recipe_pumpkin_mac_n_cheese);
