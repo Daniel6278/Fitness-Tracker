@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="4dp"
+        android:text="Food Name"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/blue" />
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:text="Date Text"
+        android:textColor="@color/orange_dark" />
+
+    <TextView
+        android:id="@+id/calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dateText"
+        android:layout_centerHorizontal="true"
+        android:text="Calories"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="@color/orange_dark" />
+
+    <TextView
+        android:id="@+id/caloriesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/calories"
+        android:layout_marginLeft="-223dp"
+        android:layout_toRightOf="@id/calories"
+        android:text="Calories Count"
+        android:textStyle="bold"
+        android:textColor="@color/gray_dark" />
+
+    <TextView
+        android:id="@+id/hasChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:text=">"
+        />
+
+
+</RelativeLayout>
