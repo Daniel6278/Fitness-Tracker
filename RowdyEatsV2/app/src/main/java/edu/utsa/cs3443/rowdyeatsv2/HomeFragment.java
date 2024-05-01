@@ -1,55 +1,36 @@
 package edu.utsa.cs3443.rowdyeatsv2;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Looper;
 import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.card.MaterialCardView;
-
-import java.util.Calendar;
+import edu.utsa.cs3443.rowdyeatsv2.Model.HomeFragmentModel;
 
 public class HomeFragment extends Fragment {
 
-    public HomeFragment(){
-        // require a empty public constructor
-    }
-
+    private HomeFragmentModel model;
     private long lastTypedTime = 0;
     private boolean isTextChangeHandled = true;
     private String nameTextBoxContents = "";
-
-    private void writeNameToPrefs(SharedPreferences sharedPref, String name) {
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(getString(R.string.preferences_name_key), name);
-        editor.apply();
-
-        Toast.makeText(getContext(), "Name Changed!", Toast.LENGTH_LONG).show();
-    }
-
-    //private boolean[] areMenusVisible = {false,false,false,false};
     private Integer selectedMenuIndex = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.println(Log.INFO, "HomeFragment", "onCreateView");
-
+        model = new HomeFragmentModel(getContext());
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -57,19 +38,12 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // greets user with "Good (Morning, Afternoon, Evening)" depending on time of day
-        Calendar calendar = Calendar.getInstance();
-        int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
         TextView greeting = view.findViewById(R.id.userGreeting);
-        greeting.setText("Good " + (currentHour >= 3 && currentHour < 12 ? "Morning" : (currentHour < 17 ? "Afternoon" : "Evening")) + ",");
+        greeting.setText(model.getGreeting());
 
-        // loads user’s name
-        SharedPreferences sharedPref = getContext().getSharedPreferences(getString(R.string.preferences_file_key), Context.MODE_PRIVATE);
-        String userName = sharedPref.getString(getString(R.string.preferences_name_key), "");
         EditText nameBox = view.findViewById(R.id.editTextName);
-        nameBox.setText(userName);
+        nameBox.setText(model.getUserName(getString(R.string.preferences_name_key), ""));
 
-        // listens for changed to user’s name
         nameBox.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -86,36 +60,32 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (isTextChangeHandled) return; // ignore if text box’s contents stayed the same
-                if (!nameBox.hasFocus()) return; // ignore events not caused by user’s typing
-
-                Log.println(Log.INFO, "TextWatcher", "name text box contents edited");
-
-                final int NAME_SAVE_DELAY_MS = 500; // don’t write to the preferences file unless the text box was unchanged for this number of milliseconds
-
-                final long epoch = System.currentTimeMillis();
-                lastTypedTime = epoch;
-
-                final Handler handler = new Handler(Looper.getMainLooper());
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (lastTypedTime != epoch) {
-                            return;
-                        }
-                        writeNameToPrefs(sharedPref, s.toString());
-                    }
-                }, NAME_SAVE_DELAY_MS);
-
-                isTextChangeHandled = true;
+                handleNameChange(s, nameBox);
             }
         });
 
+        setupMenuButtons(view);
+    }
+
+    private void handleNameChange(Editable s, EditText nameBox) {
+        if (isTextChangeHandled || !nameBox.hasFocus()) return;
+
+        final int NAME_SAVE_DELAY_MS = 500;
+        final long epoch = System.currentTimeMillis();
+        lastTypedTime = epoch;
+
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            if (lastTypedTime == epoch) {
+                model.writeNameToPrefs(getString(R.string.preferences_name_key), s.toString());
+            }
+        }, NAME_SAVE_DELAY_MS);
+
+        isTextChangeHandled = true;
+    }
+
+    private void setupMenuButtons(View view) {
         final int[] btnsIds = {
-                R.id.btnMenu1,
-                R.id.btnMenu2,
-                R.id.btnMenu3,
-                R.id.btnMenu4,
+                R.id.btnMenu1, R.id.btnMenu2, R.id.btnMenu3, R.id.btnMenu4,
         };
 
         final int[] descriptionsStringsIds = {
@@ -126,22 +96,16 @@ public class HomeFragment extends Fragment {
         };
 
         for (int i = 0; i < btnsIds.length; ++i) {
+            Button btnMenu = view.findViewById(btnsIds[i]);
+            MaterialCardView tooltipBox = view.findViewById(R.id.tooltip);
+            TextView tooltipText = view.findViewById(R.id.tooltipTxt);
 
-            // Explainer buttons on HomeScreen
-            final Button btnMenu = view.findViewById(btnsIds[i]);
-            final MaterialCardView tooltipBox = view.findViewById(R.id.tooltip);
-            final TextView tooltipText = view.findViewById(R.id.tooltipTxt);
-
-            final int finalI = i;
-            btnMenu.setOnClickListener(new View.OnClickListener() {
-                final int btnIndex = finalI;
-                @Override
-                public void onClick(View _view) {
-                    // Toggle visibility of the description text
-                    selectedMenuIndex = (selectedMenuIndex != null && selectedMenuIndex == btnIndex) ? null : btnIndex;
-                    tooltipText.setText(descriptionsStringsIds[btnIndex]);
-                    tooltipBox.setVisibility(selectedMenuIndex == null ? View.GONE : View.VISIBLE);
-                }
+            final int btnIndex = i;  // Effectively final variable for lambda expression
+            btnMenu.setOnClickListener(v -> {
+                // Toggle visibility of the description text
+                selectedMenuIndex = (selectedMenuIndex != null && selectedMenuIndex.equals(btnIndex)) ? null : btnIndex;
+                tooltipText.setText(descriptionsStringsIds[btnIndex]);
+                tooltipBox.setVisibility(selectedMenuIndex == null ? View.GONE : View.VISIBLE);
             });
         }
     }
