@@ -12,7 +12,9 @@ import android.widget.TextView;
 import edu.utsa.cs3443.rowdyeatsv2.Model.FoodRecord;
 import edu.utsa.cs3443.rowdyeatsv2.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CustomDataAdapter extends ArrayAdapter<FoodRecord> {
     private int layoutResource;
@@ -64,7 +66,13 @@ public class CustomDataAdapter extends ArrayAdapter<FoodRecord> {
         if (food != null) {
             holder.foodName.setText(food.getFoodName());
             holder.foodCalories.setText(String.format("%d cal", food.getCalories()));
-            holder.foodDate.setText(food.getRecordDate());
+
+            // Format the Date object to a string
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            String dateString = dateFormat.format(food.getRecordDate());
+
+            // Now set the formatted string as text
+            holder.foodDate.setText(dateString);
         }
 
         return row;
