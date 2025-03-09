@@ -11,6 +11,9 @@ that users can prepare at home, including original recipes, links, and macro inf
 Restaurants screen lists multiple eateries at UTSA; clicking on one takes you to a page where you
 can scroll through the entire menu. Here, you can view each item's calories and add them to your
 food log. The last screen is the food log screen, where all logged food items appear, including their
+
+<img width="588" alt="Screenshot 2025-03-09 at 4 12 32 PM" src="https://github.com/user-attachments/assets/ca5f8756-7768-4b89-860f-e5fa8a18d536" />
+
 name, calories, and the date logged. In this section, you can add more food using the floating
 action button, edit existing items, and delete them. Instructions for running our application, 
 The application should run normally in the Android Studio emulator, provided the CSV files are placed in 
