@@ -12,14 +12,17 @@ Restaurants screen lists multiple eateries at UTSA; clicking on one takes you to
 can scroll through the entire menu. Here, you can view each item's calories and add them to your
 food log. The last screen is the food log screen, where all logged food items appear, including their
 name, calories, and the date logged. In this section, you can add more food using the floating
-action button, edit existing items, and delete them.
+action button, edit existing items, and delete them. Instructions for running our application, 
+The application should run normally in the Android Studio emulator, provided the CSV files are placed in 
+the assets folder.
 
-Java Code Loction: Fitness-Tracker/RowdyEatsV2/app/src/main/java/edu/utsa/cs3443
-XML Code: 
+Java Code Loction: Fitness-Tracker/RowdyEatsV2/app/src/main/java/edu/utsa/cs3443/
+
+XML Code: Fitness-Tracker/RowdyEatsV2/app/src/main/res/
+
 Names of all contributors: Daniel Vigil, William Qin
 
-Instructions for running our application:
-    The application should run normally in the Android Studio emulator, provided the CSV files are placed in the assets folder.
+
 
 Known Issues:
     There should be no issues, except that loading general food items in the Restaurants tab can sometimes be slow due to 
