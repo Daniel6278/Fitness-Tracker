@@ -14,7 +14,9 @@ food log. The last screen is the food log screen, where all logged food items ap
 name, calories, and the date logged. In this section, you can add more food using the floating
 action button, edit existing items, and delete them.
 
-Names of all contributors: Daniel Vigil, Fernando Gonzalez, William Qin
+Java Code Loction: Fitness-Tracker/RowdyEatsV2/app/src/main/java/edu/utsa/cs3443
+XML Code: 
+Names of all contributors: Daniel Vigil, William Qin
 
 Instructions for running our application:
     The application should run normally in the Android Studio emulator, provided the CSV files are placed in the assets folder.
