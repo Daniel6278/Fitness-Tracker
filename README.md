@@ -12,7 +12,7 @@ The app consists of five main screens with a navigation control center at the bo
 - **Restaurants**: Lists UTSA campus eateries. Users can browse full menus, view calorie information, and add items to their food log.
 - **Food Log**: Displays all logged food items with name, calories, and date. Users can add new items via the floating action button, edit existing entries, or delete them.
   
-## Demo Vidio: 
+## Demo Video: 
 https://github.com/user-attachments/assets/f92d34fb-ebd6-49ad-b7b8-de701065aaf0
 
 ## Project Structure
